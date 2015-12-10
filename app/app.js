@@ -7,15 +7,15 @@ app.config(['$routeProvider',
     $routeProvider.
       when('/main/', {
         templateUrl: './partials/main.html',
-        controller: 'VinylColors'
-      });
-      // when('/songs/add', {
-      //   templateUrl: 'partials/song-form.html',
-      //   controller: 'SongFormCtrl'
-      // }).
+        controller: 'VinylColorsCtrl'
+      }).
+      when('/main/:BaseColor/:SecondaryColor/:LabelColor', {
+        templateUrl: './partials/main.html',
+        controller: 'VinylColorsCtrl'
+      })
       // when('/songs/details/:songId', {
       // 	templateUrl: "partials/song-detail.html",
       // 	controller: "SongDetailCtrl"
       // })
-      // .otherwise('/');
+      .otherwise('/main/');
   }]);
