@@ -1,12 +1,12 @@
 <div class="row">
-	<div class="col-md-8" id="vinyl-holder">
+	<div class="col-md-7" id="vinyl-holder">
 		<svg height="600" width="600">
-		  <circle cx="300" cy="250" r="250" fill="black" />
+		  <circle cx="350" cy="325" r="250" fill="black" />
 		</svg>
 	</div>
 	<div class="col-md-3" id="controls">
 		<span>Base Color</span>
-		<select class="form-control" id="base-color">
+		<select class="form-control" id="base-color" ng-model="BaseColor">
 		  <option>Red</option>
 		  <option>Blue</option>
 		  <option>Green</option>
@@ -14,7 +14,7 @@
 		  <option>Orange</option>
 		</select>
 		<span>Secondary Color</span>
-		<select class="form-control" id="secondary-color">
+		<select class="form-control" id="secondary-color" ng-model="SecondaryColor">
 		  <option>Red</option>
 		  <option>Blue</option>
 		  <option>Green</option>
@@ -22,13 +22,14 @@
 		  <option>Orange</option>
 		</select>
 		<span>Configuration</span>
-		<select class="form-control" id="configuration">
+		<select class="form-control" id="configuration" ng-model="Configuration">
 		  <option>Half & Half</option>
 		  <option>Spatter</option>
 		  <option>A Side / B Side</option>
 		  <option>Color in Color</option>
 		  <option>Haze</option>
 		</select>
+		<button class="btn" ng-click="BaseColor = undefined; SecondaryColor = undefined; Configuration = undefined">Reset</button>
 	</div>
-	<div class="col-md-1"></div>
+	<div class="col-md-2"></div>
 </div>
