@@ -3,6 +3,16 @@
 		<svg height="600" width="600">
 		  <circle cx="350" cy="325" r="250" fill="{{BaseColor}}" />
 		</svg>
+		<svg width="800" height="800" id="test">
+    	<path d="M20,200 L478,0 A180,180 0 0,1 20,200 z" fill="{{SecondaryColor}}"/>
+		</svg>
+
+		<svg height="200" width="200" id="label">
+		  <circle cx="100" cy="100" r="100" fill="{{LabelColor}}" />
+		</svg>
+		<svg height="200" width="200" id="center-hole">
+		  <circle cx="20" cy="20" r="10" fill="white" />
+		</svg>
 	</div>
 	<div class="col-md-3" id="controls">
 		<span>Base Color</span>
@@ -29,7 +39,9 @@
 		  <option>Color in Color</option>
 		  <option>Haze</option>
 		</select>
-		<button class="btn" ng-click="BaseColor = undefined; SecondaryColor = undefined; Configuration = undefined">Reset</button>
+		<span>Label Color</span>
+	  <input type="color" name="favcolor" value="#ff0000" ng-model="LabelColor">
+		<button class="btn" ng-click="BaseColor = null; SecondaryColor = null; Configuration = undefined">Reset</button>
 	</div>
 	<div class="col-md-2"></div>
 </div>
