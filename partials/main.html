@@ -19,10 +19,10 @@
 	</div>
 	<div class="col-md-3" id="controls">
 		<span>Base Color</span>
-		<select class="form-control" id="base-color" ng-model="BaseColor" ng-options="color as color.name for color in colors">
+		<select class="form-control" id="base-color" ng-model="BaseColor" ng-options="color as color.name group by color.transparency for color in colors">
 		</select>
 		<span>Secondary Color</span>
-		<select class="form-control" id="secondary-color" ng-model="SecondaryColor" ng-options="color as color.name for color in colors">
+		<select class="form-control" id="secondary-color" ng-model="SecondaryColor" ng-options="color as color.name group by color.transparency for color in colors">
 		</select>
 		<span>Configuration</span>
 	<!-- 	<select class="form-control" id="configuration" ng-model="Configuration">
