@@ -1,10 +1,13 @@
 <div class="row">
 	<div class="col-md-7" id="vinyl-holder">
 		<svg height="600" width="600">
-		  <circle cx="350" cy="325" r="250" fill="{{BaseColor.hex}}" opacity="{{BaseColor.opacity}}" />
+		  <circle cx="350" cy="325" r="250" fill="{{BaseColor.hex}}" opacity="{{BaseColor.opacity}}" stroke="black" />
 		</svg>
-		<svg width="800" height="800" id="test">
+<!-- 		<svg width="800" height="800" id="test">
     	<path d="M20,200 L478,0 A180,180 0 0,1 20,200 z" fill="{{SecondaryColor.hex}}" opacity="{{SecondaryColor.opacity}}"/>
+		</svg> -->
+		<svg width="800" height="800" id="test">
+    	<path d="{{Configuration.d}}" fill="{{SecondaryColor.hex}}" opacity="{{SecondaryColor.opacity}}"/>
 		</svg>
 
 		<svg height="200" width="200" id="label">
@@ -22,12 +25,14 @@
 		<select class="form-control" id="secondary-color" ng-model="SecondaryColor" ng-options="color as color.name for color in colors">
 		</select>
 		<span>Configuration</span>
-		<select class="form-control" id="configuration" ng-model="Configuration">
+	<!-- 	<select class="form-control" id="configuration" ng-model="Configuration">
 		  <option>Half & Half</option>
 		  <option>Spatter</option>
 		  <option>A Side / B Side</option>
 		  <option>Color in Color</option>
 		  <option>Haze</option>
+		</select> -->
+		<select class="form-control" id="configuration" ng-model="Configuration" ng-options="config as config.name for config in configs">
 		</select>
 		<span>Label Color</span>
 	  <input type="color" name="favcolor" value="#ff0000" ng-model="LabelColor">
