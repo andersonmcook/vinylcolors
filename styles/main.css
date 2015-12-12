@@ -19,11 +19,13 @@
 .halfandhalf {
   left: 116px;
   top: 225px;
-  position: absolute; }
+  position: absolute;
+  filter: url(#blur); }
 
 .colorincolor {
   position: absolute;
   left: -25px;
-  top: -225px; }
+  top: -225px;
+  filter: url(#blur); }
 
 /*# sourceMappingURL=main.css.map */

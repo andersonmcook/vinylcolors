@@ -7,6 +7,11 @@
     	<path d="M20,200 L478,0 A180,180 0 0,1 20,200 z" fill="{{SecondaryColor.hex}}" opacity="{{SecondaryColor.opacity}}"/>
 		</svg> -->
 		<svg width="800" height="800" class="{{Configuration.class}}">
+		  <defs>
+		    <filter id="blur">
+		      <feGaussianBlur in="SourceGraphic" stdDeviation="3" />
+		    </filter>
+		  </defs>
     	<path d="{{Configuration.d}}" fill="{{SecondaryColor.hex}}" opacity="{{SecondaryColor.opacity}}"/>
 		</svg>
 
