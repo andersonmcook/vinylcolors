@@ -3,9 +3,6 @@
   padding: 1em;
   border: 1px solid black; }
 
-#vinyl-holder {
-  border: 1px solid black; }
-
 #center-hole {
   left: 340px;
   top: 300px;
@@ -33,6 +30,12 @@
   position: absolute;
   left: 25px;
   top: -225px;
+  filter: url(#blur); }
+
+.splatter {
+  position: absolute;
+  left: -2px;
+  top: -220px;
   filter: url(#blur); }
 
 .picture {
