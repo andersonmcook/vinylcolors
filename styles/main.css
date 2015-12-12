@@ -29,6 +29,12 @@
   top: -225px;
   filter: url(#blur); }
 
+.asidebside {
+  position: absolute;
+  left: 25px;
+  top: -225px;
+  filter: url(#blur); }
+
 .picture {
   position: absolute;
   top: 58px;
