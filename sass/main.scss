@@ -24,8 +24,14 @@ $control-color: gray;
 	top: 225px;
 }
 
-#test {
+.halfandhalf {
 	left: 116px;
 	top: 225px;
 	position: absolute;
+}
+
+.colorincolor {
+	position: absolute;
+	left: -25px;
+	top: -225px;
 }
