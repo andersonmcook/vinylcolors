@@ -28,10 +28,12 @@ $control-color: gray;
 	left: 116px;
 	top: 225px;
 	position: absolute;
+	filter: url(#blur);
 }
 
 .colorincolor {
 	position: absolute;
 	left: -25px;
 	top: -225px;
+	filter: url(#blur);
 }
