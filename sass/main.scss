@@ -22,7 +22,7 @@ $control-color: gray;
 	position: absolute;
 	left: 260px;
 	top: 225px;
-	opacity: .9;
+	-webkit-filter: brightness(.9);
 }
 
 .halfandhalf {
@@ -43,6 +43,7 @@ $control-color: gray;
 	position: absolute;
 	top: 58px;
 	left: 98px;
-	opacity: .1;
+	opacity: .05;
 	z-index: 1000;
+	-webkit-filter: brightness(2.5);
 }
