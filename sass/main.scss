@@ -22,6 +22,7 @@ $control-color: gray;
 	position: absolute;
 	left: 260px;
 	top: 225px;
+	opacity: .9;
 }
 
 .halfandhalf {
@@ -36,4 +37,12 @@ $control-color: gray;
 	left: -25px;
 	top: -225px;
 	filter: url(#blur);
+}
+
+.picture {
+	position: absolute;
+	top: 58px;
+	left: 98px;
+	opacity: .1;
+	z-index: 1000;
 }
