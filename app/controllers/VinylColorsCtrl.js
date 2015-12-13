@@ -20,9 +20,9 @@ app.controller("VinylColorsCtrl",
 	// console.log("hey, you're in VinylColors");
 	// $scope.songs = $firebaseArray(ref);
 
-	// $scope.addToUrl = function () {
-  	$scope.sampleURL ="http://localhost:8080/#/main/" + $scope.BaseColor + "/";
-	// }
+	$scope.addToUrl = function () {
+  	$scope.sampleURL = "http://localhost:8080/#/main/" + $scope.BaseColor.name + "/";
+	};
 
 
 }]);
