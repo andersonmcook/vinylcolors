@@ -14,6 +14,9 @@
   top: 225px;
   -webkit-filter: brightness(0.9); }
 
+.black {
+  opacity: 0.9; }
+
 .halfandhalf {
   left: 116px;
   top: 225px;
