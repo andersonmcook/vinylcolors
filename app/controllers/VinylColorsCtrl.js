@@ -14,14 +14,14 @@ app.controller("VinylColorsCtrl",
 	$scope.colors = $firebaseArray(colorsRef);
 	$scope.configs = $firebaseArray(configsRef);
 
-	$scope.Configuration = $scope.configs[1];
+	// $scope.Configuration = $scope.configs[1];
 
 	// console.log("colors", $scope.colors);
 	// console.log("hey, you're in VinylColors");
 	// $scope.songs = $firebaseArray(ref);
 
 	// $scope.addToUrl = function () {
- //  	$scope.sampleURL ="http://localhost:8080/#/main/" + $scope.BaseColor + "/"
+  	$scope.sampleURL ="http://localhost:8080/#/main/" + $scope.BaseColor + "/";
 	// }
 
 
