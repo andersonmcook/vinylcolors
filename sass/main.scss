@@ -1,5 +1,15 @@
 $control-color: gray;
 
+.btn {
+	display: block;
+	margin: .25em 0;
+}
+
+input[type="color"] {
+	display: block;
+	margin: .25em 0;
+}
+
 #controls {
 	background: white;
 	padding: 1em;
