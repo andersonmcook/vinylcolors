@@ -46,6 +46,13 @@ input[type="color"] {
 	filter: url(#blur);
 }
 
+.haze {
+	left: -25px;
+	top: -190px;
+	position: absolute;
+	filter: url(#blur);
+}
+
 .colorincolor {
 	position: absolute;
 	left: -25px;
