@@ -6,22 +6,32 @@ app.controller("VinylColorsCtrl",
 	$scope.SecondaryColor = $routeParams.SecondaryColor;
 	$scope.LabelColor = $routeParams.LabelColor;
 
+// pulls from firebase and makes arrays of the objects we need
 	var ref = new Firebase("http://vinylcolors.firebaseio.com");
-	// var colorsRef = new Firebase("https://vinylcolors.firebaseio.com/colors/");
-	// var configsRef = new Firebase("https://vinylcolors.firebaseio.com/configs");
 	var colorsRef = ref.child("colors");
 	var configsRef = ref.child("configs");
 	$scope.colors = $firebaseArray(colorsRef);
 	$scope.configs = $firebaseArray(configsRef);
 
-	// $scope.Configuration = $scope.configs[1];
+// sets default color to black once the colors array is loaded
+	$scope.colors.$loaded().then(function(){
+		$scope.BaseColor = $scope.colors[3];
+		$scope.SecondaryColor = $scope.colors[3];
+	}).catch(function(error) {
+        console.log("Error:", error);
+      });
 
-	// console.log("colors", $scope.colors);
-	// console.log("hey, you're in VinylColors");
-	// $scope.songs = $firebaseArray(ref);
+// sets default configuration to none once the configs array is loaded
+	$scope.configs.$loaded().then(function(){
+		$scope.Configuration = $scope.configs[3];
+	}).catch(function(error) {
+        console.log("Error:", error);
+      });
 
-	$scope.addToUrl = function () {
-  	$scope.sampleURL = "http://localhost:8080/#/main/" + $scope.BaseColor.name + "/";
+
+// grabs URL, not currently functional
+	$scope.addToURL = function () {
+  	$scope.sampleURL = "http://localhost:8080/#/main/" + $scope.BaseColor + "/";
 	};
 
 
