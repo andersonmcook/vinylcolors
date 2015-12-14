@@ -9,7 +9,7 @@ app.config(['$routeProvider',
         templateUrl: './partials/main.html',
         controller: 'VinylColorsCtrl'
       }).
-      when('/main/:BaseColor/:SecondaryColor/:LabelColor', {
+      when('/main/:BaseColor/:SecondaryColor/:Configuration', {
         templateUrl: './partials/main.html',
         controller: 'VinylColorsCtrl'
       })
