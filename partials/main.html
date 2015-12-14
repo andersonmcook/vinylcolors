@@ -39,9 +39,11 @@
 		</select>
 		<span>Label Color</span>
 	  <input type="color" name="favcolor" value="#ff0000" ng-model="LabelColor">
+	  <hr>
 	  <button class="btn" ng-click="reverseColors()">Reverse</button>
 	  <button class="btn" ng-click="random()">Random</button>
 		<button class="btn" ng-click="BaseColor = null; SecondaryColor = null; Configuration = null; LabelColor = null">Reset</button>
+		<hr>
 		<input class ="form-control" type="text" size="100" value="{{sampleURL}}" placeholder="Share URL">
 		<button class="btn" ng-click="addToURL()">Grab URL</button>
 	</div>
