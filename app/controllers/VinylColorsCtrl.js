@@ -49,11 +49,11 @@ app.controller("VinylColorsCtrl",
 	$scope.random = function () {
 		var base = Math.floor(Math.random() * ($scope.colors.length));
 		var second = Math.floor(Math.random() * ($scope.colors.length));
-		// var label = Math.floor(Math.random() * ($scope.colors.length - 1));
+		var label = '#'+('00000'+(Math.random()*(1<<24)|0).toString(16)).slice(-6);
 		var combo = Math.floor(Math.random() * ($scope.configs.length));
 		$scope.BaseColor = $scope.colors[base];
 		$scope.SecondaryColor = $scope.colors[second];
-		// $scope.LabelColor = label;
+		$scope.LabelColor = label;
 		$scope.Configuration = $scope.configs[combo];
 	};
 
