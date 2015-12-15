@@ -61,10 +61,19 @@ app.controller("VinylColorsCtrl",
 
 // sets default configuration to none once the configs array is loaded
 	$scope.configs.$loaded().then(function(){
-		$scope.Configuration = $scope.configs[4];
+		$scope.Configuration = $scope.configs[5];
 	}).catch(function(error) {
         console.log("Error:", error);
       });
+
+	$scope.reset = function () {
+		console.log("you clicked reset");
+		$scope.BaseColor = $scope.colors[3];
+		$scope.SecondaryColor = $scope.colors[3];
+		$scope.Configuration = $scope.configs[5];
+		$scope.LabelColor = "#000000";
+		$scope.TextColor = "#000000";
+	};
 
 // grabs URL, not currently functional
 	$scope.addToURL = function () {
