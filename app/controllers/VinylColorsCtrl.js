@@ -15,9 +15,6 @@ app.controller("VinylColorsCtrl",
 
 // pulls from firebase and makes arrays of the objects we need
 	var ref = new Firebase("http://vinylcolors.firebaseio.com");
-	var baseColorRef = new Firebase("http://vinylcolors.firebaseio.com/colors/" + bc);
-	var secondaryColorRef = new Firebase("http://vinylcolors.firebaseio.com/colors/" + sc);
-	var configRef = new Firebase("http://vinylcolors.firebaseio.com/configs/" + c);
 
 	var colorsRef = ref.child("colors");
 	var configsRef = ref.child("configs");
