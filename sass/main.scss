@@ -39,6 +39,13 @@ input[type="color"] {
 	-webkit-filter: brightness(.9);
 }
 
+#label-text {
+	position: absolute;
+	left: 317px;
+	top: 270px;
+	font-weight: bold;
+}
+
 .black {
 	opacity: 0.9;
 }
