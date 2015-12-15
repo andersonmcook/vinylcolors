@@ -10,9 +10,8 @@ app.controller("VinylColorsCtrl",
 	var bc = $routeParams.bc;
 	var sc = $routeParams.sc;
 	var c = $routeParams.c;
-	console.log("bc", bc);
 
-	console.log("$routeParams bc, sc, c", $scope.BaseColor, $scope.SecondaryColor, $scope.Configuration);
+	console.log("$routeParams bc, sc, c", bc, sc, c);
 
 // pulls from firebase and makes arrays of the objects we need
 	var ref = new Firebase("http://vinylcolors.firebaseio.com");
@@ -20,52 +19,48 @@ app.controller("VinylColorsCtrl",
 	var secondaryColorRef = new Firebase("http://vinylcolors.firebaseio.com/colors/" + sc);
 	var configRef = new Firebase("http://vinylcolors.firebaseio.com/configs/" + c);
 
-	$scope.BaseColor = baseColorRef;
-	console.log("baseColorRef", baseColorRef);
-	// $scope.test = (baseColorRef);
-	console.log("test", $scope.test);
-
-
 	var colorsRef = ref.child("colors");
 	var configsRef = ref.child("configs");
-
-	var test3 = colorsRef.equalTo("white");
-	console.log("test3", test3);
-
-	// var keytest = colorsRef.$getRecord("white");
-	// console.log("keytest", keytest);
 
 	$scope.colors = $firebaseArray(colorsRef);
 	$scope.configs = $firebaseArray(configsRef);
 
-	console.log("colorsRef", colorsRef);
-	console.log("$scope.colors", $scope.colors);
-
-
-
 // sets default color to black once the colors array is loaded
 	$scope.colors.$loaded().then(function(){
-
-		// $scope.BaseColor = baseColorRef;
-		// $scope.BaseColor = $routeParams.bc;
-		// var base = colorsRef.child($routeParams.bc);
-		// console.log("base", base);
-
-		// $scope.BaseColor = colorsRef.child($routeParams.bc);
-
+// sets default color to black
 		$scope.BaseColor = $scope.colors[4];
 		$scope.SecondaryColor = $scope.colors[4];
+// sets base color based on routeparams
+		for (var x = 0; x < $scope.colors.length; x++) {
+			if ($scope.colors[x].$id === bc) {
+				$scope.BaseColor = $scope.colors[x];
+			}
+		}
+// sets secondary color based on routeparams
+		for (var y = 0; y < $scope.colors.length; y++) {
+			if ($scope.colors[y].$id === sc) {
+				$scope.SecondaryColor = $scope.colors[y];
+			}
+		}
 	}).catch(function(error) {
         console.log("Error:", error);
       });
 
 // sets default configuration to none once the configs array is loaded
 	$scope.configs.$loaded().then(function(){
+// sets default configuration to none
 		$scope.Configuration = $scope.configs[5];
+// sets configuration based on routeparams
+		for (var z = 0; z < $scope.configs.length; z++) {
+			if ($scope.configs[z].$id === c) {
+				$scope.Configuration = $scope.configs[z];
+			}
+		}
 	}).catch(function(error) {
         console.log("Error:", error);
       });
 
+// resets all colors and configuration
 	$scope.reset = function () {
 		console.log("you clicked reset");
 		$scope.BaseColor = $scope.colors[4];
