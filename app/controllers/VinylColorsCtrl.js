@@ -2,16 +2,13 @@ app.controller("VinylColorsCtrl",
 	["$scope", "$routeParams", "$firebaseArray", 
 	function($scope, $routeParams, $firebaseArray) {
 
-	// $scope.BaseColor = $routeParams.bc;
-	// $scope.SecondaryColor = $routeParams.sc;
-	// // $scope.LabelColor = $routeParams.LabelColor;
-	// $scope.Configuration = $routeParams.c;
-
 	var bc = $routeParams.bc;
 	var sc = $routeParams.sc;
 	var c = $routeParams.c;
+	// var lc = $routeParams.lc;
+	// var tc = $routeParams.tc;
 
-	console.log("$routeParams bc, sc, c", bc, sc, c);
+	// console.log("$routeParams bc, sc, c", bc, sc, c);
 
 // pulls from firebase and makes arrays of the objects we need
 	var ref = new Firebase("http://vinylcolors.firebaseio.com");
@@ -67,13 +64,12 @@ app.controller("VinylColorsCtrl",
 		$scope.TextColor = "#000000";
 	};
 
-// grabs URL, not currently functional
+// generates URL for page
 	$scope.addToURL = function () {
   	$scope.sampleURL = "http://localhost:8080/#/main/" + $scope.BaseColor.$id + "/" + $scope.SecondaryColor.$id + "/" + $scope.Configuration.$id;
-  	// this logs a hex value with #
-  	console.log("label color", $scope.LabelColor);
 	};
 
+// generates description
 	$scope.getDescription = function () {
 		$scope.sampleDescription = $scope.BaseColor.name + " / " + $scope.SecondaryColor.name + " / " + $scope.Configuration.name;
 	};
@@ -101,35 +97,3 @@ app.controller("VinylColorsCtrl",
 	};
 
 }]);
-
-
-
-
-// app.controller("indivGameCtrl", 
-// ["$firebaseArray", "$scope", "$location", "$rootScope", "$http", "generalVariables",
-// function($firebaseArray, $scope, $location, $rootScope, $http, generalVariables){
-
-//     console.log("location ", $location)
-
-//     var objectName = $location.$$path.split("/")[2];
-//     console.log("objectName ", objectName);
-
-//     var ref = new Firebase("https://frontcapstone.firebaseio.com");
-
-//     var objectFromFirebase = $firebaseArray(ref.child("Games"));
-
-//     objectFromFirebase.$loaded()
-//     .then(function(data){
-//         console.log("data ", data)
-
-//         _.filter(data, function(game){
-
-//             if(game.$id === objectName){
-//                 console.log("the game selected is ", game);
-//             }
-//         })
-
-//     })
-
-    
-// }]);
