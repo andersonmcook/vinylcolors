@@ -1,7 +1,5 @@
 var app = angular.module("VinylColorCombinator", ["firebase", "ngRoute"]);
 
-console.log("hey, youre in the app");
-
 app.config(['$routeProvider',
   function($routeProvider) {
     $routeProvider.
@@ -9,7 +7,7 @@ app.config(['$routeProvider',
         templateUrl: './partials/main.html',
         controller: 'VinylColorsCtrl'
       }).
-      when('/main/:BaseColor/:SecondaryColor/:Configuration', {
+      when('/main/:bc/:sc/:c', {
         templateUrl: './partials/main.html',
         controller: 'VinylColorsCtrl'
       })
