@@ -53,8 +53,8 @@ app.controller("VinylColorsCtrl",
 
 		// $scope.BaseColor = colorsRef.child($routeParams.bc);
 
-		$scope.BaseColor = $scope.colors[3];
-		$scope.SecondaryColor = $scope.colors[3];
+		$scope.BaseColor = $scope.colors[4];
+		$scope.SecondaryColor = $scope.colors[4];
 	}).catch(function(error) {
         console.log("Error:", error);
       });
@@ -68,8 +68,8 @@ app.controller("VinylColorsCtrl",
 
 	$scope.reset = function () {
 		console.log("you clicked reset");
-		$scope.BaseColor = $scope.colors[3];
-		$scope.SecondaryColor = $scope.colors[3];
+		$scope.BaseColor = $scope.colors[4];
+		$scope.SecondaryColor = $scope.colors[4];
 		$scope.Configuration = $scope.configs[5];
 		$scope.LabelColor = "#000000";
 		$scope.TextColor = "#000000";
