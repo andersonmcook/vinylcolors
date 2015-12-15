@@ -46,14 +46,14 @@ app.controller("VinylColorsCtrl",
 // sets default color to black once the colors array is loaded
 	$scope.colors.$loaded().then(function(){
 
-		$scope.BaseColor = baseColorRef;
+		// $scope.BaseColor = baseColorRef;
 		// $scope.BaseColor = $routeParams.bc;
 		// var base = colorsRef.child($routeParams.bc);
 		// console.log("base", base);
 
 		// $scope.BaseColor = colorsRef.child($routeParams.bc);
 
-		// $scope.BaseColor = $scope.colors[3];
+		$scope.BaseColor = $scope.colors[3];
 		$scope.SecondaryColor = $scope.colors[3];
 	}).catch(function(error) {
         console.log("Error:", error);
