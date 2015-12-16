@@ -58,7 +58,6 @@ app.controller("VinylColorsCtrl",
 
 // resets all colors and configuration
 	$scope.reset = function () {
-		console.log("you clicked reset");
 		$scope.BaseColor = $scope.colors[4];
 		$scope.SecondaryColor = $scope.colors[4];
 		$scope.Configuration = $scope.configs[5];
