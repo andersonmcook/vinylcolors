@@ -2,6 +2,8 @@ app.controller("VinylColorsCtrl",
 	["$scope", "$routeParams", "$firebaseArray", 
 	function($scope, $routeParams, $firebaseArray) {
 
+	$scope.toggle = true;
+
 	var bc = $routeParams.bc;
 	var sc = $routeParams.sc;
 	var c = $routeParams.c;
@@ -101,7 +103,6 @@ app.controller("VinylColorsCtrl",
 		var spinner = angular.element(document.querySelector("#vinyl-holder"));
 		// var spinbutton = angular.element(document.querySelector("#spinbutton"));
 		spinner.toggleClass("spin");
-		// spinbutton.html("STOP RECORD");
 	};
 
 }]);
