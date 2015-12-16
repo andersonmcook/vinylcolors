@@ -91,4 +91,16 @@ input[type="color"] {
 .Semi-Transparent {
   -webkit-filter: brightness(1.05); }
 
+@keyframes spinrecord {
+  from {
+    transform: rotate(0deg); }
+  to {
+    transform: rotate(360deg); } }
+.spin {
+  transform-origin: 54.5% 54%;
+  animation-name: spinrecord;
+  animation-duration: 1.8s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear; }
+
 /*# sourceMappingURL=main.css.map */

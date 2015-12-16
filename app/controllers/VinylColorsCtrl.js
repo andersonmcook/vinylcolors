@@ -96,4 +96,9 @@ app.controller("VinylColorsCtrl",
 		$scope.TextColor = labeltext;
 	};
 
+	$scope.spin = function () {
+		var spinner = angular.element(document.querySelector("#vinyl-holder"));
+		spinner.toggleClass("spin");
+	};
+
 }]);
