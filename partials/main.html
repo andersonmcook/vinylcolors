@@ -36,23 +36,23 @@
 	</div>
 
 	<div class="col-md-3" id="controls">
-		<span>Base Color</span>
+		<span>BASE COLOR</span>
 		<select class="form-control" id="base-color" ng-model="BaseColor" ng-options="color as color.name group by color.transparency for color in colors">
 		</select>
-		<span>Secondary Color</span>
+		<span>SECONDARY COLOR</span>
 		<select class="form-control" id="secondary-color" ng-model="SecondaryColor" ng-options="color as color.name group by color.transparency for color in colors">
 		</select>
-		<span>Configuration</span>
+		<span>CONFIGURATION</span>
 		<select class="form-control" id="configuration" ng-model="Configuration" ng-options="config as config.name for config in configs">
 		</select>
-		<span>Label Color</span>
+		<span>LABEL COLOR</span>
 	  <input type="color" name="favcolor" value="#ff0000" ng-model="LabelColor">
-	  <span>Text Color</span>
+	  <span>TEXT COLOR</span>
 	  <input type="color" name="favcolor" value="#ff0000" ng-model="TextColor">
 	  <hr>
-	  <button class="btn" ng-click="reverseColors()">Reverse</button>
-	  <button class="btn" ng-click="random()">Random</button>
-		<button class="btn" ng-click="reset()">Reset</button>
+	  <button class="btn" ng-click="reverseColors()">REVERSE</button>
+	  <button class="btn" ng-click="random()">RANDOM</button>
+		<button class="btn" ng-click="reset()">RESET</button>
 		<hr>
 		<input class="form-control" type="text" size="100" value="{{sampleURL}}" placeholder="Share URL">
 		<button class="btn" ng-click="addToURL()">Generate URL</button>
