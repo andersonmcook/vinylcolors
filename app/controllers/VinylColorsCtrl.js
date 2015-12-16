@@ -96,9 +96,12 @@ app.controller("VinylColorsCtrl",
 		$scope.TextColor = labeltext;
 	};
 
+//spins record at ~33 1/3 rpm
 	$scope.spin = function () {
 		var spinner = angular.element(document.querySelector("#vinyl-holder"));
+		// var spinbutton = angular.element(document.querySelector("#spinbutton"));
 		spinner.toggleClass("spin");
+		// spinbutton.html("STOP RECORD");
 	};
 
 }]);
