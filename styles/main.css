@@ -11,7 +11,11 @@ input[type="color"] {
 
 #controls {
   background: white;
-  padding: 1em;
+  padding: 1em; }
+
+.btn {
+  border-radius: 0;
+  background: white;
   border: 1px solid black; }
 
 #center-hole {
@@ -30,6 +34,9 @@ input[type="color"] {
   left: 317px;
   top: 270px;
   font-weight: bold; }
+
+.label {
+  text-transform: uppercase; }
 
 .black {
   opacity: 0.9; }
