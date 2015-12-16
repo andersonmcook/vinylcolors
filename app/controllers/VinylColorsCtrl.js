@@ -2,22 +2,20 @@ app.controller("VinylColorsCtrl",
 	["$scope", "$routeParams", "$firebaseArray", 
 	function($scope, $routeParams, $firebaseArray) {
 
+// sets default for play record button to true
 	$scope.toggle = true;
 
+// sets variables based on routeParams in URL
 	var bc = $routeParams.bc;
 	var sc = $routeParams.sc;
 	var c = $routeParams.c;
 	// var lc = $routeParams.lc;
 	// var tc = $routeParams.tc;
 
-	// console.log("$routeParams bc, sc, c", bc, sc, c);
-
 // pulls from firebase and makes arrays of the objects we need
 	var ref = new Firebase("http://vinylcolors.firebaseio.com");
-
 	var colorsRef = ref.child("colors");
 	var configsRef = ref.child("configs");
-
 	$scope.colors = $firebaseArray(colorsRef);
 	$scope.configs = $firebaseArray(configsRef);
 
@@ -100,7 +98,6 @@ app.controller("VinylColorsCtrl",
 //spins record at ~33 1/3 rpm
 	$scope.spin = function () {
 		var spinner = angular.element(document.querySelector("#vinyl-holder"));
-		// var spinbutton = angular.element(document.querySelector("#spinbutton"));
 		spinner.toggleClass("spin");
 	};
 
