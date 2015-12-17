@@ -9,8 +9,8 @@ app.controller("VinylColorsCtrl",
 	var bc = $routeParams.bc;
 	var sc = $routeParams.sc;
 	var c = $routeParams.c;
-	// var lc = $routeParams.lc;
-	// var tc = $routeParams.tc;
+	var lc = $routeParams.lc;
+	var tc = $routeParams.tc;
 
 // pulls from firebase and makes arrays of the objects we need
 	var ref = new Firebase("http://vinylcolors.firebaseio.com");
@@ -54,6 +54,10 @@ app.controller("VinylColorsCtrl",
         console.log("Error:", error);
       });
 
+// sets label and text colors based on routeparams
+	$scope.LabelColor = "#" + lc;
+	$scope.TextColor = "#" + tc;
+
 // resets all colors and configuration
 	$scope.reset = function () {
 		$scope.BaseColor = $scope.colors[4];
@@ -65,7 +69,7 @@ app.controller("VinylColorsCtrl",
 
 // generates URL for page
 	$scope.addToURL = function () {
-  	$scope.sampleURL = "http://localhost:8080/#/main/" + $scope.BaseColor.$id + "/" + $scope.SecondaryColor.$id + "/" + $scope.Configuration.$id;
+  	$scope.sampleURL = "http://localhost:8080/#/main/" + $scope.BaseColor.$id + "/" + $scope.SecondaryColor.$id + "/" + $scope.Configuration.$id + "/" + $scope.LabelColor.substr(1) + "/" + $scope.TextColor.substr(1);
 	};
 
 // generates description
