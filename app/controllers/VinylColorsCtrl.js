@@ -8,6 +8,9 @@ app.controller("VinylColorsCtrl",
 // sets default for play record button to true
 	$scope.toggle = true;
 
+// sets default for label text
+	$scope.Text = "PLACEHOLDER TEXT FOR YOUR RECORD";
+
 // sets variables based on routeParams in URL
 	var bc = $routeParams.bc;
 	var sc = $routeParams.sc;
