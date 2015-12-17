@@ -20,12 +20,12 @@
 		<svg height="200" width="200" id="label">
 		  <circle cx="106" cy="101" r="84" fill="{{LabelColor}}" stroke="black" stroke-width=".25" />
 		</svg>
-		<svg height="200" width="200" id="label-text">
+		<svg height="300" width="300" id="label-text">
 			<defs>
-		    <path id="textPath" d="M10 45 C10 0 90 0 90 45"/>
+		    <path id="textPath" d="M 10 200 A 50,50 0 1 1 10 200.0001"/>
 			</defs>
 			<text fill="{{TextColor}}">
-		    <textPath xlink:href="#textPath">ARTIST - ALBUM</textPath>
+		    <textPath xlink:href="#textPath">{{Text}}</textPath>
 			</text>
 		</svg>
 
@@ -46,9 +46,11 @@
 		<select class="form-control" id="configuration" ng-model="Configuration" ng-options="config as config.name for config in configs">
 		</select>
 		<span>LABEL COLOR</span>
-	  <input type="color" name="favcolor" value="#ff0000" ng-model="LabelColor">
+	  <input type="color" value="#ff0000" ng-model="LabelColor">
 	  <span>TEXT COLOR</span>
-	  <input type="color" name="favcolor" value="#ff0000" ng-model="TextColor">
+	  <input type="color" value="#ff0000" ng-model="TextColor">
+	  <span>TEXT</span>
+	  <input type="text" ng-model="Text" placeholder="ARTIST - ALBUM">
 	  <hr>
 	  <button id="spinbutton" class="btn" ng-click="toggle = !toggle; spin()">{{toggle && "PLAY RECORD" || "STOP RECORD"}}</button>
 	  <!-- <button id="spinbutton" class="btn" ng-click="toggle = !toggle; spin()">{{toggle ? test : "STOP RECORD"}}</button> -->
