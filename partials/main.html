@@ -51,11 +51,12 @@
 	  <input type="color" name="favcolor" value="#ff0000" ng-model="TextColor">
 	  <hr>
 	  <button id="spinbutton" class="btn" ng-click="toggle = !toggle; spin()">{{toggle && "PLAY RECORD" || "STOP RECORD"}}</button>
+	  <!-- <button id="spinbutton" class="btn" ng-click="toggle = !toggle; spin()">{{toggle ? test : "STOP RECORD"}}</button> -->
 	  <button class="btn" ng-click="reverseColors()">REVERSE</button>
 	  <button class="btn" ng-click="random()">RANDOM</button>
 		<button class="btn" ng-click="reset()">RESET</button>
 		<hr>
-		<button class="btn copy" ng-click="addToURL()" data-clipboard-target="#shareurl">Generate & Copy URL</button>
+		<button class="btn copy" ng-click="addToURL()" data-clipboard-target="#shareurl"><span class="glyphicon glyphicon-copy"></span></button>
 		<input id="shareurl" class="form-control" type="text" size="100" value="{{sampleURL}}" placeholder="Share URL">
 		<!-- <button class="btn copy" data-clipboard-target="#shareurl">Copy</button> -->
 		<!-- <textarea class="form-control" rows="2">{{sampleDescription}}</textarea>
