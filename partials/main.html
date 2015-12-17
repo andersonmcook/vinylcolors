@@ -55,10 +55,11 @@
 	  <button class="btn" ng-click="random()">RANDOM</button>
 		<button class="btn" ng-click="reset()">RESET</button>
 		<hr>
-		<input class="form-control" type="text" size="100" value="{{sampleURL}}" placeholder="Share URL">
-		<button class="btn" ng-click="addToURL()">Generate URL</button>
-		<textarea class="form-control" rows="2">{{sampleDescription}}</textarea>
-		<button class="btn" ng-click="getDescription()">Generate Description</button>
+		<button class="btn copy" ng-click="addToURL()" data-clipboard-target="#shareurl">Generate & Copy URL</button>
+		<input id="shareurl" class="form-control" type="text" size="100" value="{{sampleURL}}" placeholder="Share URL">
+		<!-- <button class="btn copy" data-clipboard-target="#shareurl">Copy</button> -->
+		<!-- <textarea class="form-control" rows="2">{{sampleDescription}}</textarea>
+		<button class="btn" ng-click="getDescription()">Generate Description</button> -->
 	</div>
 	<div class="col-md-3"></div>
 </div>

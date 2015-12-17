@@ -2,6 +2,8 @@ app.controller("VinylColorsCtrl",
 	["$scope", "$routeParams", "$firebaseArray", 
 	function($scope, $routeParams, $firebaseArray) {
 
+
+		new Clipboard('.copy'); 
 // sets default for play record button to true
 	$scope.toggle = true;
 
