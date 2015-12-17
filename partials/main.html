@@ -35,7 +35,7 @@
 
 	</div>
 
-	<div class="col-md-3" id="controls">
+	<div class="col-md-2" id="controls">
 		<span>BASE COLOR</span>
 		<select class="form-control" id="base-color" ng-model="BaseColor" ng-options="color as color.name group by color.transparency for color in colors">
 		</select>
@@ -50,7 +50,7 @@
 	  <span>TEXT COLOR</span>
 	  <input type="color" name="favcolor" value="#ff0000" ng-model="TextColor">
 	  <hr>
-	  <button id="spinbutton" class="btn" ng-click="toggle = !toggle; spin()">{{toggle && "SPIN RECORD" || "STOP RECORD"}}</button>
+	  <button id="spinbutton" class="btn" ng-click="toggle = !toggle; spin()">{{toggle && "PLAY RECORD" || "STOP RECORD"}}</button>
 	  <button class="btn" ng-click="reverseColors()">REVERSE</button>
 	  <button class="btn" ng-click="random()">RANDOM</button>
 		<button class="btn" ng-click="reset()">RESET</button>
@@ -60,5 +60,5 @@
 		<textarea class="form-control" rows="2">{{sampleDescription}}</textarea>
 		<button class="btn" ng-click="getDescription()">Generate Description</button>
 	</div>
-	<div class="col-md-2"></div>
+	<div class="col-md-3"></div>
 </div>
