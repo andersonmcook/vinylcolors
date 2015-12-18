@@ -64,6 +64,17 @@ app.controller("VinylColorsCtrl",
 	$scope.LabelColor = "#" + lc;
 	$scope.TextColor = "#" + tc;
 
+// easter egg
+$scope.$watch("Text", function(newValue, oldValue) {
+	if ($scope.Text.toLowerCase() === "nashville software school") {
+		$scope.BaseColor = $scope.colors[18];
+		$scope.SecondaryColor = $scope.colors[34];
+		$scope.Configuration = $scope.configs[1];
+		$scope.LabelColor = "#515151";
+		$scope.TextColor = "#cbcbcb";
+	}
+});
+
 // resets all colors and configuration
 	$scope.reset = function () {
 		$scope.BaseColor = $scope.colors[4];
