@@ -103,7 +103,7 @@ input[type="color"] {
   to {
     transform: rotate(360deg); } }
 .spin {
-  transform-origin: 52% 54%;
+  transform-origin: 52.25% 53.825%;
   animation-name: spinrecord;
   animation-duration: 1.8s;
   animation-iteration-count: infinite;
