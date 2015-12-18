@@ -1,38 +1,38 @@
 <div class="row">
 
 	<div class="col-md-7" id="vinyl-holder">
+<!-- 		<div id="vinyl-holder"> -->
+			<img src="record.jpg" height="536" width="536" class="picture">
 
-		<img src="record.jpg" height="536" width="536" class="picture">
+			<svg height="600" width="620" class="{{BaseColor.transparency}} {{BaseColor.black}}">
+			  <circle cx="350" cy="325" r="250" fill="{{BaseColor.hex}}" stroke="black" stroke-width=".5"/>
+			</svg>
 
-		<svg height="600" width="620" class="{{BaseColor.transparency}} {{BaseColor.black}}">
-		  <circle cx="350" cy="325" r="250" fill="{{BaseColor.hex}}" stroke="black" stroke-width=".5"/>
-		</svg>
+			<svg width="800" height="800" class="{{Configuration.class}} {{SecondaryColor.transparency}} {{SecondaryColor.black}}">
+			  <defs>
+			    <filter id="blur">
+						<feGaussianBlur in="SourceGraphic" stdDeviation="{{Configuration.deviation}}" />
+			    </filter>
+			  </defs>
+				<path d="{{Configuration.d}}" fill="{{SecondaryColor.hex}}"/>
+			</svg>
 
-		<svg width="800" height="800" class="{{Configuration.class}} {{SecondaryColor.transparency}} {{SecondaryColor.black}}">
-		  <defs>
-		    <filter id="blur">
-					<feGaussianBlur in="SourceGraphic" stdDeviation="{{Configuration.deviation}}" />
-		    </filter>
-		  </defs>
-			<path d="{{Configuration.d}}" fill="{{SecondaryColor.hex}}"/>
-		</svg>
+			<svg height="200" width="200" id="label">
+			  <circle cx="106" cy="101" r="84" fill="{{LabelColor}}" stroke="black" stroke-width=".25" />
+			</svg>
+			<svg height="300" width="300" id="label-text">
+				<defs>
+			    <path id="textPath" d="M 10 200 A 50,50 0 1 1 10 200.0001"/>
+				</defs>
+				<text fill="{{TextColor}}">
+			    <textPath xlink:href="#textPath">{{Text}}</textPath>
+				</text>
+			</svg>
 
-		<svg height="200" width="200" id="label">
-		  <circle cx="106" cy="101" r="84" fill="{{LabelColor}}" stroke="black" stroke-width=".25" />
-		</svg>
-		<svg height="300" width="300" id="label-text">
-			<defs>
-		    <path id="textPath" d="M 10 200 A 50,50 0 1 1 10 200.0001"/>
-			</defs>
-			<text fill="{{TextColor}}">
-		    <textPath xlink:href="#textPath">{{Text}}</textPath>
-			</text>
-		</svg>
-
-		<svg height="200" width="200" id="center-hole">
-		  <circle cx="26" cy="26" r="6" fill="white" stroke="black" stroke-width:".125" />
-		</svg>
-
+			<svg height="200" width="200" id="center-hole">
+			  <circle cx="26" cy="26" r="6" fill="white" stroke="black" stroke-width:".125" />
+			</svg>
+<!-- 		</div> -->
 	</div>
 
 	<div class="col-md-2" id="controls">
