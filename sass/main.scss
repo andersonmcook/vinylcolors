@@ -9,6 +9,10 @@ body {
 	margin: .25em 0;
 }
 
+.col-md-7 {
+	width: 700px;
+}
+
 input[type="color"] {
 	display: block;
 	margin: .25em 0;
@@ -129,7 +133,7 @@ input[type="color"] {
 }
 
 .spin {
-	transform-origin: 54.5% 54%;
+	transform-origin: 52% 54%;
 	animation-name: spinrecord;
   animation-duration: 1.8s;
   animation-iteration-count: infinite;
