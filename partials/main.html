@@ -59,7 +59,9 @@
 		<button class="btn" ng-click="reset()">RESET</button>
 		<hr>
 		<button class="btn copy" ng-click="addToURL()" data-clipboard-target="#shareurl"><span class="glyphicon glyphicon-copy"></span></button>
-		<input id="shareurl" class="form-control" type="text" size="100" value="{{sampleURL}}" placeholder="Share URL">
+<!-- 		<input id="shareurl" class="form-control" type="text" size="100" value="{{sampleURL}}" placeholder="Share URL"> -->
+		<p>{{Message}}</p>
+		<a id="shareurl" href="{{sampleURL}}">{{sampleURL}}</a>
 		<!-- <button class="btn copy" data-clipboard-target="#shareurl">Copy</button> -->
 		<!-- <textarea class="form-control" rows="2">{{sampleDescription}}</textarea>
 		<button class="btn" ng-click="getDescription()">Generate Description</button> -->

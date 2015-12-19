@@ -87,6 +87,8 @@ $scope.$watch("Text", function(newValue, oldValue) {
 // generates URL for page
 	$scope.addToURL = function () {
   	$scope.sampleURL = "http://localhost:8080/#/main/" + $scope.BaseColor.$id + "/" + $scope.SecondaryColor.$id + "/" + $scope.Configuration.$id + "/" + $scope.LabelColor.substr(1) + "/" + $scope.TextColor.substr(1);
+  	// default message when you click share icon
+		$scope.Message = "Share URL copied to clipboard";
 	};
 
 // generates description
