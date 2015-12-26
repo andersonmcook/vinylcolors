@@ -12,6 +12,9 @@ input[type="color"] {
   display: block;
   margin: .25em 0; }
 
+.textlabel {
+  display: block; }
+
 #controls {
   background: white;
   padding: 1em; }

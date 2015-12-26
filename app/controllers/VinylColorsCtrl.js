@@ -27,7 +27,7 @@ app.controller("VinylColorsCtrl",
 
 // sets default color to black once the colors array is loaded
 	$scope.colors.$loaded().then(function(){
-// sets default color to black
+// sets default base color to black; secondary color to white
 		$scope.BaseColor = $scope.colors[4];
 		$scope.SecondaryColor = $scope.colors[34];
 // sets base color based on routeparams
