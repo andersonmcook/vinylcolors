@@ -29,7 +29,7 @@ app.controller("VinylColorsCtrl",
 	$scope.colors.$loaded().then(function(){
 // sets default color to black
 		$scope.BaseColor = $scope.colors[4];
-		$scope.SecondaryColor = $scope.colors[4];
+		$scope.SecondaryColor = $scope.colors[34];
 // sets base color based on routeparams
 		for (var x = 0; x < $scope.colors.length; x++) {
 			if ($scope.colors[x].$id === bc) {
