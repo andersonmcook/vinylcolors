@@ -37,18 +37,21 @@ app.controller("VinylColorsCtrl",
 		// 	}
 		// }
 
-// alternate way of doing it
-		var bcIndex = $scope.colors.map(function(x) {return x.$id; }).indexOf(bc);
+// sets base color based on routeparams
+		var bcIndex = $scope.colors.map(function(x) {return x.$id;}).indexOf(bc);
 		$scope.BaseColor = $scope.colors[bcIndex];
 
-
+// sets secondary color based on routeparams
+		// for (var y = 0; y < $scope.colors.length; y++) {
+		// 	if ($scope.colors[y].$id === sc) {
+		// 		$scope.SecondaryColor = $scope.colors[y];
+		// 	}
+		// }
 
 // sets secondary color based on routeparams
-		for (var y = 0; y < $scope.colors.length; y++) {
-			if ($scope.colors[y].$id === sc) {
-				$scope.SecondaryColor = $scope.colors[y];
-			}
-		}
+		var scIndex = $scope.colors.map(function(x) {return x.$id;}).indexOf(sc);
+		$scope.SecondaryColor = $scope.colors[scIndex];
+
 	}).catch(function(error) {
         console.log("Error:", error);
       });
@@ -57,12 +60,18 @@ app.controller("VinylColorsCtrl",
 	$scope.configs.$loaded().then(function(){
 // sets default configuration to none
 		$scope.Configuration = $scope.configs[5];
+		
 // sets configuration based on routeparams
-		for (var z = 0; z < $scope.configs.length; z++) {
-			if ($scope.configs[z].$id === c) {
-				$scope.Configuration = $scope.configs[z];
-			}
-		}
+		// for (var z = 0; z < $scope.configs.length; z++) {
+		// 	if ($scope.configs[z].$id === c) {
+		// 		$scope.Configuration = $scope.configs[z];
+		// 	}
+		// }
+
+// sets configuration based on routeparams
+		var cIndex = $scope.configs.map(function(x) {return x.$id;}).indexOf(c);
+		$scope.Configuration = $scope.configs[cIndex];
+
 	}).catch(function(error) {
         console.log("Error:", error);
       });
