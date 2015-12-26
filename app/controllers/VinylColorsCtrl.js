@@ -31,11 +31,18 @@ app.controller("VinylColorsCtrl",
 		$scope.BaseColor = $scope.colors[4];
 		$scope.SecondaryColor = $scope.colors[34];
 // sets base color based on routeparams
-		for (var x = 0; x < $scope.colors.length; x++) {
-			if ($scope.colors[x].$id === bc) {
-				$scope.BaseColor = $scope.colors[x];
-			}
-		}
+		// for (var x = 0; x < $scope.colors.length; x++) {
+		// 	if ($scope.colors[x].$id === bc) {
+		// 		$scope.BaseColor = $scope.colors[x];
+		// 	}
+		// }
+
+// alternate way of doing it
+		var bcIndex = $scope.colors.map(function(x) {return x.$id; }).indexOf(bc);
+		$scope.BaseColor = $scope.colors[bcIndex];
+
+
+
 // sets secondary color based on routeparams
 		for (var y = 0; y < $scope.colors.length; y++) {
 			if ($scope.colors[y].$id === sc) {
