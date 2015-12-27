@@ -1,3 +1,5 @@
+/*jshint esnext: true */
+
 app.controller("VinylColorsCtrl", 
 	["$scope", "$routeParams", "$firebaseArray", 
 	function($scope, $routeParams, $firebaseArray) {
@@ -38,7 +40,8 @@ app.controller("VinylColorsCtrl",
 		// }
 
 // sets base color based on routeparams
-		var bcIndex = $scope.colors.map(function(x) {return x.$id;}).indexOf(bc);
+		// var bcIndex = $scope.colors.map(function(x) {return x.$id;}).indexOf(bc);
+		var bcIndex = $scope.colors.map(x => x.$id).indexOf(bc);
 		$scope.BaseColor = $scope.colors[bcIndex];
 
 // sets secondary color based on routeparams
@@ -49,7 +52,8 @@ app.controller("VinylColorsCtrl",
 		// }
 
 // sets secondary color based on routeparams
-		var scIndex = $scope.colors.map(function(x) {return x.$id;}).indexOf(sc);
+		// var scIndex = $scope.colors.map(function(x) {return x.$id;}).indexOf(sc);
+		var scIndex = $scope.colors.map(x => x.$id).indexOf(sc);
 		$scope.SecondaryColor = $scope.colors[scIndex];
 
 	}).catch(function(error) {
@@ -60,7 +64,7 @@ app.controller("VinylColorsCtrl",
 	$scope.configs.$loaded().then(function(){
 // sets default configuration to none
 		$scope.Configuration = $scope.configs[5];
-		
+
 // sets configuration based on routeparams
 		// for (var z = 0; z < $scope.configs.length; z++) {
 		// 	if ($scope.configs[z].$id === c) {
@@ -69,7 +73,8 @@ app.controller("VinylColorsCtrl",
 		// }
 
 // sets configuration based on routeparams
-		var cIndex = $scope.configs.map(function(x) {return x.$id;}).indexOf(c);
+		// var cIndex = $scope.configs.map(function(x) {return x.$id;}).indexOf(c);
+		var cIndex = $scope.configs.map(x => x.$id).indexOf(c);
 		$scope.Configuration = $scope.configs[cIndex];
 
 	}).catch(function(error) {
@@ -94,10 +99,10 @@ $scope.$watch("Text", function(newValue, oldValue) {
 // resets all colors and configuration
 	$scope.reset = function () {
 		$scope.BaseColor = $scope.colors[4];
-		$scope.SecondaryColor = $scope.colors[4];
+		$scope.SecondaryColor = $scope.colors[34];
 		$scope.Configuration = $scope.configs[5];
 		$scope.LabelColor = "#000000";
-		$scope.TextColor = "#000000";
+		$scope.TextColor = "#FFFFFF";
 	};
 
 // generates URL for page
