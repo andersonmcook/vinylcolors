@@ -32,19 +32,12 @@ app.controller("VinylColorsCtrl",
 
 // sets base color based on routeparams with default fallback
 		var bcIndex = $scope.colors.map(x => x.$id).indexOf(bc);
-		if (bcIndex > -1) {
-			$scope.BaseColor = $scope.colors[bcIndex];
-		} else {
-			$scope.BaseColor = $scope.colors[4];
-		}
+		$scope.BaseColor = (bcIndex > -1) ? $scope.colors[bcIndex] : $scope.colors[4];
 
 // sets secondary color based on routeparams with default fallback
 		var scIndex = $scope.colors.map(x => x.$id).indexOf(sc);
-		if (scIndex > -1) {
-			$scope.SecondaryColor = $scope.colors[scIndex];
-		} else {
-			$scope.SecondaryColor = $scope.colors[34];
-		}
+		$scope.SecondaryColor = (scIndex > -1) ? $scope.colors[scIndex] : $scope.colors[34];
+
 	}).catch(function(error) {
       console.log("Error:", error);
     });
@@ -52,28 +45,17 @@ app.controller("VinylColorsCtrl",
 // sets configuration based on routeparams with default fallback
 	$scope.configs.$loaded().then(function(){
 		var cIndex = $scope.configs.map(x => x.$id).indexOf(c);
-		if (cIndex > -1) {
-			$scope.Configuration = $scope.configs[cIndex];
-		} else {
-		$scope.Configuration = $scope.configs[5];
-		}
+		$scope.Configuration = (cIndex > -1) ? $scope.configs[cIndex] : $scope.configs[5];
+
 	}).catch(function(error) {
       console.log("Error:", error);
     });
 
 // sets label color based on routeparams with default fallback
-	if (lc !== undefined) {
-		$scope.LabelColor = "#" + lc;
-	} else {
-		$scope.LabelColor = "#000000";
-	}
+	$scope.LabelColor = (lc === undefined) ? "#000000" : "#" + lc;
 
 // sets text color based on routeparams with default fallback
-	if (tc !== undefined) {
-		$scope.TextColor = "#" + tc;
-	} else {
-		$scope.TextColor = "#ffffff";
-	}
+	$scope.TextColor = (tc === undefined) ? "#ffffff" : "#" + tc;
 
 // easter egg
 $scope.$watch("Text", function(newValue, oldValue) {
