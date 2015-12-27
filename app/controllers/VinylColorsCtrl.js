@@ -27,56 +27,36 @@ app.controller("VinylColorsCtrl",
 	$scope.colors = $firebaseArray(colorsRef);
 	$scope.configs = $firebaseArray(configsRef);
 
-// sets default color to black once the colors array is loaded
+// sets routeparams colors with default fallback
 	$scope.colors.$loaded().then(function(){
-// sets default base color to black; secondary color to white
-		$scope.BaseColor = $scope.colors[4];
-		$scope.SecondaryColor = $scope.colors[34];
-// sets base color based on routeparams
-		// for (var x = 0; x < $scope.colors.length; x++) {
-		// 	if ($scope.colors[x].$id === bc) {
-		// 		$scope.BaseColor = $scope.colors[x];
-		// 	}
-		// }
 
-// sets base color based on routeparams
-		// var bcIndex = $scope.colors.map(function(x) {return x.$id;}).indexOf(bc);
+// sets base color based on routeparams with default fallback
 		var bcIndex = $scope.colors.map(x => x.$id).indexOf(bc);
-		$scope.BaseColor = $scope.colors[bcIndex];
+		if (bcIndex > -1) {
+			$scope.BaseColor = $scope.colors[bcIndex];
+		} else {
+			$scope.BaseColor = $scope.colors[4];
+		}
 
-// sets secondary color based on routeparams
-		// for (var y = 0; y < $scope.colors.length; y++) {
-		// 	if ($scope.colors[y].$id === sc) {
-		// 		$scope.SecondaryColor = $scope.colors[y];
-		// 	}
-		// }
-
-// sets secondary color based on routeparams
-		// var scIndex = $scope.colors.map(function(x) {return x.$id;}).indexOf(sc);
+// sets secondary color based on routeparams with default fallback
 		var scIndex = $scope.colors.map(x => x.$id).indexOf(sc);
-		$scope.SecondaryColor = $scope.colors[scIndex];
-
+		if (scIndex > -1) {
+			$scope.SecondaryColor = $scope.colors[scIndex];
+		} else {
+			$scope.SecondaryColor = $scope.colors[34];
+		}
 	}).catch(function(error) {
         console.log("Error:", error);
       });
 
-// sets default configuration to none once the configs array is loaded
+// sets configuration based on routeparams with default fallback
 	$scope.configs.$loaded().then(function(){
-// sets default configuration to none
-		$scope.Configuration = $scope.configs[5];
-
-// sets configuration based on routeparams
-		// for (var z = 0; z < $scope.configs.length; z++) {
-		// 	if ($scope.configs[z].$id === c) {
-		// 		$scope.Configuration = $scope.configs[z];
-		// 	}
-		// }
-
-// sets configuration based on routeparams
-		// var cIndex = $scope.configs.map(function(x) {return x.$id;}).indexOf(c);
 		var cIndex = $scope.configs.map(x => x.$id).indexOf(c);
-		$scope.Configuration = $scope.configs[cIndex];
-
+		if (cIndex > -1) {
+			$scope.Configuration = $scope.configs[cIndex];
+		} else {
+		$scope.Configuration = $scope.configs[5];
+		}
 	}).catch(function(error) {
         console.log("Error:", error);
       });
