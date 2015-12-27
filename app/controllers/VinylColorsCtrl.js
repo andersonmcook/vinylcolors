@@ -46,8 +46,8 @@ app.controller("VinylColorsCtrl",
 			$scope.SecondaryColor = $scope.colors[34];
 		}
 	}).catch(function(error) {
-        console.log("Error:", error);
-      });
+      console.log("Error:", error);
+    });
 
 // sets configuration based on routeparams with default fallback
 	$scope.configs.$loaded().then(function(){
@@ -58,12 +58,22 @@ app.controller("VinylColorsCtrl",
 		$scope.Configuration = $scope.configs[5];
 		}
 	}).catch(function(error) {
-        console.log("Error:", error);
-      });
+      console.log("Error:", error);
+    });
 
-// sets label and text colors based on routeparams
-	$scope.LabelColor = "#" + lc;
-	$scope.TextColor = "#" + tc;
+// sets label color based on routeparams with default fallback
+	if (lc !== undefined) {
+		$scope.LabelColor = "#" + lc;
+	} else {
+		$scope.LabelColor = "#000000";
+	}
+
+// sets text color based on routeparams with default fallback
+	if (tc !== undefined) {
+		$scope.TextColor = "#" + tc;
+	} else {
+		$scope.TextColor = "#ffffff";
+	}
 
 // easter egg
 $scope.$watch("Text", function(newValue, oldValue) {
