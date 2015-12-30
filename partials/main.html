@@ -68,5 +68,15 @@
 	</div>
 	<div class="col-md-3">
 		<a href="/#/login/"><button id="login-register" class="btn" ng-show="loggedOut">LOGIN / REGISTER</button></a>
+		<button id="login-register" class="btn" ng-hide="loggedOut" ng-click="logout()">LOGOUT</button>
+		<div ng-hide="loggedOut">
+			<input type="text" ng-model="selection">
+			<button class-"btn" ng-click="save()">SAVE</button>
+			<ul>
+				<li ng-repeat="selection in selections">
+					<a href="{{selection.url}}">{{selection.name}}</a>
+				</li>
+			</ul>
+		</div>
 	</div>
 </div>
