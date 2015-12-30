@@ -66,10 +66,11 @@
 		<!-- <textarea class="form-control" rows="2">{{sampleDescription}}</textarea>
 		<button class="btn" ng-click="getDescription()">Generate Description</button> -->
 	</div>
-	<div class="col-md-3">
+	<div class="col-md-3" id="user-controls">
 		<a href="/#/login/"><button id="login-register" class="btn" ng-show="loggedOut">LOGIN / REGISTER</button></a>
-		<button id="login-register" class="btn" ng-hide="loggedOut" ng-click="logout()">LOGOUT</button>
+		<button id="logout" class="btn" ng-hide="loggedOut" ng-click="logout()">LOGOUT</button>
 		<div ng-hide="loggedOut">
+			<hr>
 			<input type="text" ng-model="selection" placeholder="NAME YOUR SELECTION" size="24">
 			<button class="btn" ng-click="save()">SAVE</button>
 			<hr>

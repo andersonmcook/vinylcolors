@@ -19,6 +19,9 @@ input[type="color"] {
   background: white;
   padding: 1em; }
 
+#user-controls {
+  padding: 1em; }
+
 .btn {
   border-radius: 0;
   background: white;
@@ -132,5 +135,9 @@ ul a {
 ul a:hover {
   text-decoration: none;
   color: gray; }
+
+#logout {
+  border: 1px solid red;
+  color: red; }
 
 /*# sourceMappingURL=main.css.map */
