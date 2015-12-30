@@ -28,12 +28,13 @@ input[type="color"] {
   border: 1px solid black; }
 
 .smallbtn {
-  border-radius: 0;
+  border-radius: 50%;
   background: white;
   border: 1px solid red;
   margin-left: .5em;
   line-height: 1em;
-  color: red; }
+  color: red;
+  vertical-align: text-bottom; }
 
 #center-hole {
   left: 340px;
@@ -135,6 +136,14 @@ ul a {
 ul a:hover {
   text-decoration: none;
   color: gray; }
+
+a {
+  text-decoration: none;
+  color: black; }
+
+a:hover {
+  text-decoration: none;
+  color: black; }
 
 #logout {
   border: 1px solid red;
