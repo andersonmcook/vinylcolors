@@ -24,6 +24,14 @@ input[type="color"] {
   background: white;
   border: 1px solid black; }
 
+.smallbtn {
+  border-radius: 0;
+  background: white;
+  border: 1px solid red;
+  margin-left: .5em;
+  line-height: 1em;
+  color: red; }
+
 #center-hole {
   left: 340px;
   top: 300px;
@@ -113,6 +121,16 @@ input[type="color"] {
   animation-timing-function: linear; }
 
 ul {
-  list-style-type: none; }
+  list-style-type: none;
+  padding-left: 0; }
+
+ul a {
+  text-decoration: none;
+  color: black;
+  font-size: 1.5em; }
+
+ul a:hover {
+  text-decoration: none;
+  color: gray; }
 
 /*# sourceMappingURL=main.css.map */

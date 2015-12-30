@@ -34,6 +34,15 @@ input[type="color"] {
 	border: 1px solid black;
 }
 
+.smallbtn {
+	border-radius: 0;
+	background: white;
+	border: 1px solid red;
+	margin-left: .5em;
+	line-height: 1em;
+	color: red;
+}
+
 #vinyl-holder {
 	// border: 1px solid black;
 	// background-image: url("http://api.thumbr.it/whitenoise-800x800.png?");
@@ -146,4 +155,16 @@ input[type="color"] {
 
 ul {
 	list-style-type: none;
+	padding-left: 0;
+}
+
+ul a {
+	text-decoration: none;
+	color: black;
+	font-size: 1.5em;
+}
+
+ul a:hover {
+	text-decoration: none;
+	color: gray;
 }
