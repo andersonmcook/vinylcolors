@@ -140,4 +140,8 @@ $scope.$watch("Text", function(newValue, oldValue) {
 		$scope.selection = "";
 	};
 
+	$scope.delete = function (trash) {
+		$scope.selections.$remove(trash);
+	};
+
 }]);

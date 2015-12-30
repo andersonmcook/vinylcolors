@@ -50,7 +50,7 @@
 	  <span>TEXT COLOR</span>
 	  <input type="color" value="#ff0000" ng-model="TextColor">
 	  <span class="textlabel">TEXT</span>
-	  <input type="text" ng-model="Text">
+	  <input type="text" ng-model="Text" size="24">
 	  <hr>
 	  <button id="spinbutton" class="btn" ng-click="toggle = !toggle; spin()">{{toggle && "PLAY RECORD" || "STOP RECORD"}}</button>
 	  <!-- <button id="spinbutton" class="btn" ng-click="toggle = !toggle; spin()">{{toggle ? test : "STOP RECORD"}}</button> -->
@@ -70,11 +70,13 @@
 		<a href="/#/login/"><button id="login-register" class="btn" ng-show="loggedOut">LOGIN / REGISTER</button></a>
 		<button id="login-register" class="btn" ng-hide="loggedOut" ng-click="logout()">LOGOUT</button>
 		<div ng-hide="loggedOut">
-			<input type="text" ng-model="selection">
-			<button class-"btn" ng-click="save()">SAVE</button>
+			<input type="text" ng-model="selection" placeholder="NAME YOUR SELECTION" size="24">
+			<button class="btn" ng-click="save()">SAVE</button>
+			<hr>
+			<span>SAVED SELECTIONS</span>
 			<ul>
 				<li ng-repeat="selection in selections">
-					<a href="{{selection.url}}">{{selection.name}}</a>
+					<a href="{{selection.url}}">{{selection.name}}</a><button class='smallbtn' ng-click="delete(selection)">&times;</button>
 				</li>
 			</ul>
 		</div>
