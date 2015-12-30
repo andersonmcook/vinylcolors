@@ -1,8 +1,8 @@
 /*jshint esnext: true */
 
 app.controller("VinylColorsCtrl", 
-	["$scope", "$routeParams", "$firebaseArray", 
-	function($scope, $routeParams, $firebaseArray) {
+	["$scope", "$routeParams", "$firebaseArray", "getUID", 
+	function($scope, $routeParams, $firebaseArray, getUID) {
 
 // adds clipboard functionality to copy class
 	new Clipboard('.copy');
@@ -12,6 +12,10 @@ app.controller("VinylColorsCtrl",
 
 // sets default for label text
 	$scope.Text = "PLACEHOLDER TEXT FOR YOUR RECORD";
+
+// sets default of loggedOut
+//may have to change
+	$scope.loggedOut = getUID.getUID() === "" ? true : false;
 
 // sets variables based on routeParams in URL
 	var bc = $routeParams.bc;
