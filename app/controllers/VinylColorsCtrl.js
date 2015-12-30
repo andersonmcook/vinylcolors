@@ -13,9 +13,11 @@ app.controller("VinylColorsCtrl",
 // sets default for label text
 	$scope.Text = "PLACEHOLDER TEXT FOR YOUR RECORD";
 
-// sets default of loggedOut
-//may have to change
-	$scope.loggedOut = getUID.getUID() === "" ? true : false;
+// gets uid
+	var uid = getUID.getUID();
+
+// checks getUID to set log in button status
+	$scope.loggedOut = uid === "" ? true : false;
 
 // sets variables based on routeParams in URL
 	var bc = $routeParams.bc;
@@ -28,8 +30,10 @@ app.controller("VinylColorsCtrl",
 	var ref = new Firebase("http://vinylcolors.firebaseio.com");
 	var colorsRef = ref.child("colors");
 	var configsRef = ref.child("configs");
+	var selectionsRef = ref.child("/users/" + uid + "/selections/");
 	$scope.colors = $firebaseArray(colorsRef);
 	$scope.configs = $firebaseArray(configsRef);
+	$scope.selections = $firebaseArray(selectionsRef);
 
 // sets routeparams colors with default fallback
 	$scope.colors.$loaded().then(function(){
@@ -115,10 +119,25 @@ $scope.$watch("Text", function(newValue, oldValue) {
 		$scope.TextColor = labeltext;
 	};
 
-//spins record at ~33 1/3 rpm
+// spins record at ~33 1/3 rpm
 	$scope.spin = function () {
 		var spinner = angular.element(document.querySelector("#vinyl-holder"));
 		spinner.toggleClass("spin");
+	};
+
+// log out
+	$scope.logout = function () {
+		ref.unauth();
+		console.log('clicked logout');
+		getUID.addUID("");
+		$scope.loggedOut = true;
+	};
+
+	$scope.save = function () {
+		$scope.savedURL = "/#/main/" + $scope.BaseColor.$id + "/" + $scope.SecondaryColor.$id + "/" + $scope.Configuration.$id + "/" + $scope.LabelColor.substr(1) + "/" + $scope.TextColor.substr(1);
+		var selectionsRef = ref.child("/users/" + uid + "/selections/");
+		selectionsRef.push({"name": $scope.selection, "url": $scope.savedURL});
+		$scope.selection = "";
 	};
 
 }]);

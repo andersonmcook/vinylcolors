@@ -18,7 +18,7 @@ console.log("hey you're in LoginCtrl");
 			    console.log("Error creating user:", error);
 			  } else {
 			    console.log("Successfully created user account with uid:", userData.uid);
-			    getUID.addUID(userdata.uid);
+			    getUID.addUID(userData.uid);
 			    var usersRef = new Firebase("https://vinylcolors.firebaseio.com/users/" + userData.uid + "/");
 			    usersRef.set({'email': $scope.email});
 			    $location.path("/#/main/");

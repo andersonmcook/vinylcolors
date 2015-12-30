@@ -112,4 +112,7 @@ input[type="color"] {
   animation-iteration-count: infinite;
   animation-timing-function: linear; }
 
+ul {
+  list-style-type: none; }
+
 /*# sourceMappingURL=main.css.map */
