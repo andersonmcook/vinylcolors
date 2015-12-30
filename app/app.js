@@ -10,10 +10,10 @@ app.config(['$routeProvider',
       when('/main/:bc/:sc/:c/:lc?/:tc?', {
         templateUrl: './partials/main.html',
         controller: 'VinylColorsCtrl'
+      }).
+      when('/login/', {
+      	templateUrl: "partials/login.html",
+      	controller: "LoginCtrl"
       })
-      // when('/songs/details/:songId', {
-      // 	templateUrl: "partials/song-detail.html",
-      // 	controller: "SongDetailCtrl"
-      // })
       .otherwise('/main/');
   }]);
