@@ -133,6 +133,8 @@ $scope.$watch("Text", function(newValue, oldValue) {
 		$scope.loggedOut = true;
 	};
 
+// save a selection
+// should i save them as an object with the necessary parts rather than a url?
 	$scope.save = function () {
 		$scope.savedURL = "/#/main/" + $scope.BaseColor.$id + "/" + $scope.SecondaryColor.$id + "/" + $scope.Configuration.$id + "/" + $scope.LabelColor.substr(1) + "/" + $scope.TextColor.substr(1);
 		var selectionsRef = ref.child("/users/" + uid + "/selections/");
@@ -140,6 +142,7 @@ $scope.$watch("Text", function(newValue, oldValue) {
 		$scope.selection = "";
 	};
 
+// delete a saved selection
 	$scope.delete = function (trash) {
 		$scope.selections.$remove(trash);
 	};
