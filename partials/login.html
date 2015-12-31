@@ -1,12 +1,15 @@
 <div class="row">
-	<div class="col-md-3">
-		<a href="/#/main"><span class="glyphicon glyphicon-arrow-left"></span>BACK</a>
+<div class="col-md-2"></div>
+	<div class="col-md-1">
+		<a href="/#/main"><span class="glyphicon glyphicon-arrow-left"></span> BACK</a>
 	</div>
 	<div class="col-md-6">
-		<label>Email:<input type="email" ng-model="email"></label>
-		<label>Password:<input type="password" ng-model="password"></label>
-		<button class="btn" ng-click="register()">REGISTER</button>
-		<button class="btn" ng-click="login()">LOGIN</button>
+		<div id="login-register-form">
+			<label>Email:<input type="email" ng-model="email"></label>
+			<label>Password:<input type="password" ng-model="password"></label>
+			<button class="btn" ng-click="register()">REGISTER</button>
+			<button class="btn" ng-click="login()">LOGIN</button>
+		</div>
 	</div>
 	<div class="col-md-3"></div>
 </div>
