@@ -4,8 +4,6 @@ app.controller("LoginCtrl",
 	["$scope", "$routeParams", "$firebaseArray", "getUID", "$location", 
 	function($scope, $routeParams, $firebaseArray, getUID, $location) {
 
-console.log("hey you're in LoginCtrl");
-
 // register user
 		$scope.register = function () {
 			console.log("you clicked register");
