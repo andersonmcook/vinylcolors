@@ -45,5 +45,8 @@ app.controller("LoginCtrl",
 			});
 		};
 
+		$scope.back = function () {
+			$location.path("/main/" + getUID.getParams());
+		};
 
 }]);
