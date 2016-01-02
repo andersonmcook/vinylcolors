@@ -1,8 +1,8 @@
 /*jshint esnext: true */
 
 app.controller("VinylColorsCtrl", 
-	["$scope", "$routeParams", "$firebaseArray", "getUID", 
-	function($scope, $routeParams, $firebaseArray, getUID) {
+	["$scope", "$routeParams", "$firebaseArray", "getUID", "$location", 
+	function($scope, $routeParams, $firebaseArray, getUID, $location) {
 
 // adds clipboard functionality to copy class
 	new Clipboard('.copy');
@@ -145,6 +145,11 @@ $scope.$watch("Text", function(newValue, oldValue) {
 // delete a saved selection
 	$scope.delete = function (trash) {
 		$scope.selections.$remove(trash);
+	};
+
+// login button to go to login page and store some info
+	$scope.loginButton = function () {
+		$location.path("/login/");
 	};
 
 }]);

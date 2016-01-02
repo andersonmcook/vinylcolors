@@ -1,7 +1,7 @@
 <div class="row">
 
 	<div class="col-md-7" id="vinyl-holder">
-		<img src="record-smallgs.jpg" height="536" width="536" class="picture">
+		<img src="record-small.jpg" height="536" width="536" class="picture">
 
 		<svg height="600" width="620" class="{{BaseColor.transparency}} {{BaseColor.black}}">
 		  <circle cx="350" cy="325" r="250" fill="{{BaseColor.hex}}" stroke="black" stroke-width=".5"/>
@@ -62,7 +62,8 @@
 		<a id="shareurl" href="{{sampleURL}}">{{sampleURL}}</a>
 	</div>
 	<div class="col-md-3" id="user-controls">
-		<a href="/#/login/"><button id="login-register" class="btn" ng-show="loggedOut">LOGIN / REGISTER</button></a>
+<!-- 		<a href="/#/login/"><button id="login-register" class="btn" ng-show="loggedOut">LOGIN / REGISTER</button></a>-->
+		<button id="login-register" class="btn" ng-show="loggedOut" ng-click="loginButton()">LOGIN / REGISTER</button>
 		<button id="logout" class="btn" ng-hide="loggedOut" ng-click="logout()">LOGOUT</button>
 		<div ng-hide="loggedOut">
 			<hr>
