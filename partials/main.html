@@ -1,38 +1,36 @@
 <div class="row">
 
 	<div class="col-md-7" id="vinyl-holder">
-<!-- 		<div id="vinyl-holder"> -->
-			<img src="record-small.jpg" height="536" width="536" class="picture">
+		<img src="record-smallgs.jpg" height="536" width="536" class="picture">
 
-			<svg height="600" width="620" class="{{BaseColor.transparency}} {{BaseColor.black}}">
-			  <circle cx="350" cy="325" r="250" fill="{{BaseColor.hex}}" stroke="black" stroke-width=".5"/>
-			</svg>
+		<svg height="600" width="620" class="{{BaseColor.transparency}} {{BaseColor.black}}">
+		  <circle cx="350" cy="325" r="250" fill="{{BaseColor.hex}}" stroke="black" stroke-width=".5"/>
+		</svg>
 
-			<svg width="800" height="800" class="{{Configuration.class}} {{SecondaryColor.transparency}} {{SecondaryColor.black}}">
-			  <defs>
-			    <filter id="blur">
-						<feGaussianBlur in="SourceGraphic" stdDeviation="{{Configuration.deviation}}" />
-			    </filter>
-			  </defs>
-				<path d="{{Configuration.d}}" fill="{{SecondaryColor.hex}}"/>
-			</svg>
+		<svg width="800" height="800" class="{{Configuration.class}} {{SecondaryColor.transparency}} {{SecondaryColor.black}}">
+		  <defs>
+		    <filter id="blur">
+					<feGaussianBlur in="SourceGraphic" stdDeviation="{{Configuration.deviation}}" />
+		    </filter>
+		  </defs>
+			<path d="{{Configuration.d}}" fill="{{SecondaryColor.hex}}"/>
+		</svg>
 
-			<svg height="200" width="200" id="label">
-			  <circle cx="106" cy="101" r="84" fill="{{LabelColor}}" stroke="black" stroke-width=".25" />
-			</svg>
-			<svg height="300" width="300" id="label-text">
-				<defs>
-			    <path id="textPath" d="M 10 200 A 50,50 0 1 1 10 200.0001"/>
-				</defs>
-				<text fill="{{TextColor}}">
-			    <textPath xlink:href="#textPath">{{Text}}</textPath>
-				</text>
-			</svg>
+		<svg height="200" width="200" id="label">
+		  <circle cx="106" cy="101" r="84" fill="{{LabelColor}}" stroke="black" stroke-width=".25" />
+		</svg>
+		<svg height="300" width="300" id="label-text">
+			<defs>
+		    <path id="textPath" d="M 10 200 A 50,50 0 1 1 10 200.0001"/>
+			</defs>
+			<text fill="{{TextColor}}">
+		    <textPath xlink:href="#textPath">{{Text}}</textPath>
+			</text>
+		</svg>
 
-			<svg height="200" width="200" id="center-hole">
-			  <circle cx="26" cy="26" r="6" fill="white" stroke="black" stroke-width:".125" />
-			</svg>
-<!-- 		</div> -->
+		<svg height="200" width="200" id="center-hole">
+		  <circle cx="26" cy="26" r="6" fill="white" stroke="black" stroke-width:".125" />
+		</svg>
 	</div>
 
 	<div class="col-md-2" id="controls">
@@ -52,19 +50,16 @@
 	  <span class="textlabel">TEXT</span>
 	  <input type="text" ng-model="Text" size="24">
 	  <hr>
-	  <button id="spinbutton" class="btn" ng-click="toggle = !toggle; spin()">{{toggle && "PLAY RECORD" || "STOP RECORD"}}</button>
-	  <!-- <button id="spinbutton" class="btn" ng-click="toggle = !toggle; spin()">{{toggle ? test : "STOP RECORD"}}</button> -->
+	 <!--  <button id="spinbutton" class="btn" ng-click="toggle = !toggle; spin()">{{toggle && "PLAY RECORD" || "STOP RECORD"}}</button> -->
+	  <button id="spinbutton" class="btn" ng-click="toggle = !toggle; spin()" ng-show="toggle"><span class="glyphicon glyphicon-play"></span></button>
+	  <button id="stopbutton" class="btn" ng-click="toggle = !toggle; spin()" ng-hide="toggle"><span class="glyphicon glyphicon-stop"></span></button>
 	  <button class="btn" ng-click="reverseColors()">REVERSE</button>
 	  <button class="btn" ng-click="random()">RANDOM</button>
 		<button class="btn" ng-click="reset()">RESET</button>
 		<hr>
 		<button class="btn copy" ng-click="addToURL()" data-clipboard-target="#shareurl"><span class="glyphicon glyphicon-copy"></span></button>
-<!-- 		<input id="shareurl" class="form-control" type="text" size="100" value="{{sampleURL}}" placeholder="Share URL"> -->
 		<p>{{Message}}</p>
 		<a id="shareurl" href="{{sampleURL}}">{{sampleURL}}</a>
-		<!-- <button class="btn copy" data-clipboard-target="#shareurl">Copy</button> -->
-		<!-- <textarea class="form-control" rows="2">{{sampleDescription}}</textarea>
-		<button class="btn" ng-click="getDescription()">Generate Description</button> -->
 	</div>
 	<div class="col-md-3" id="user-controls">
 		<a href="/#/login/"><button id="login-register" class="btn" ng-show="loggedOut">LOGIN / REGISTER</button></a>
