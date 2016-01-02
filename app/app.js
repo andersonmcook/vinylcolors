@@ -14,6 +14,6 @@ app.config(['$routeProvider',
       when('/login/', {
       	templateUrl: "partials/login.html",
       	controller: "LoginCtrl"
-      })
-      .otherwise('/main/');
+      });
+      // .otherwise('/main/');
   }]);

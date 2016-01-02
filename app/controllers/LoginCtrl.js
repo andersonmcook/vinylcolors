@@ -19,7 +19,7 @@ app.controller("LoginCtrl",
 			    getUID.addUID(userData.uid);
 			    var usersRef = new Firebase("https://vinylcolors.firebaseio.com/users/" + userData.uid + "/");
 			    usersRef.set({'email': $scope.email});
-			    $location.path("/#/main/");
+			    $location.path("/main/" + getUID.getParams());
 			    $scope.loggedOut = false;
 			    $scope.$apply();
 			  }
@@ -38,8 +38,8 @@ app.controller("LoginCtrl",
 			  } else {
 			    console.log("Authenticated successfully with payload:", authData);
 			    getUID.addUID(authData.uid);
+			    $location.path("/main/" + getUID.getParams());
 			    $scope.loggedOut = false;
-			    $location.path("/#/main/");
 			    $scope.$apply();
 			  }
 			});

@@ -149,6 +149,7 @@ $scope.$watch("Text", function(newValue, oldValue) {
 
 // login button to go to login page and store some info
 	$scope.loginButton = function () {
+		getUID.addParams($scope.BaseColor.$id, $scope.SecondaryColor.$id, $scope.Configuration.$id, $scope.LabelColor.substr(1), $scope.TextColor.substr(1));
 		$location.path("/login/");
 	};
 
