@@ -43,6 +43,11 @@ input[type="color"] {
   color: red;
   vertical-align: text-bottom; }
 
+.red-x {
+  color: red;
+  margin-left: .5em;
+  cursor: pointer; }
+
 #center-hole {
   left: 340px;
   top: 300px;

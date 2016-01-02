@@ -57,6 +57,12 @@ input[type="color"] {
 	vertical-align: text-bottom;
 }
 
+.red-x {
+	color: red;
+	margin-left: .5em;
+	cursor: pointer;
+}
+
 #vinyl-holder {
 	// border: 1px solid black;
 	// background-image: url("http://api.thumbr.it/whitenoise-800x800.png?");
