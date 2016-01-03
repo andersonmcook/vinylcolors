@@ -50,13 +50,10 @@
 	  <span class="textlabel">TEXT</span>
 	  <input type="text" ng-model="Text" size="24">
 	  <hr>
-	 <!--  <button id="spinbutton" class="btn" ng-click="toggle = !toggle; spin()">{{toggle && "PLAY RECORD" || "STOP RECORD"}}</button> -->
 	  <button id="spinbutton" class="btn" ng-click="toggle = !toggle; spin()" ng-show="toggle"><span class="glyphicon glyphicon-play"></span></button>
 	  <button id="stopbutton" class="btn" ng-click="toggle = !toggle; spin()" ng-hide="toggle"><span class="glyphicon glyphicon-stop"></span></button>
 	  <button class="btn" ng-click="reverseColors()">REVERSE</button>
-	  <!-- <button class="btn" ng-click="reverseColors()"><span class="glyphicon glyphicon-random"></span></button> -->
 	  <button class="btn" ng-click="random()">RANDOM</button>
-	  <!-- <button class="btn" ng-click="random()"><span class="glyphicon glyphicon-random"></span></button> -->
 		<button class="btn" ng-click="reset()">RESET</button>
 		<hr>
 		<button class="btn copy" ng-click="addToURL()" data-clipboard-target="#shareurl"><span class="glyphicon glyphicon-copy"></span></button>
@@ -64,7 +61,6 @@
 		<a id="shareurl" href="{{sampleURL}}">{{sampleURL}}</a>
 	</div>
 	<div class="col-md-3" id="user-controls">
-<!-- 		<a href="/#/login/"><button id="login-register" class="btn" ng-show="loggedOut">LOGIN / REGISTER</button></a>-->
 		<button id="login-register" class="btn" ng-show="loggedOut" ng-click="loginButton()">LOGIN / REGISTER</button>
 		<button id="logout" class="btn" ng-hide="loggedOut" ng-click="logout()">LOGOUT</button>
 		<div ng-hide="loggedOut">
@@ -75,7 +71,6 @@
 			<span>SAVED SELECTIONS</span>
 			<ul>
 				<li ng-repeat="selection in selections">
-					<!-- <a href="{{selection.url}}">{{selection.name}}</a><button class='smallbtn' ng-click="delete(selection)">&times;</button> -->
 					<a href="{{selection.url}}">{{selection.name}}</a><span class='red-x glyphicon glyphicon-remove' ng-click="delete(selection)"></span>
 				</li>
 			</ul>
