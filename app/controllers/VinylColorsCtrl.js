@@ -128,7 +128,6 @@ $scope.$watch("Text", function(newValue, oldValue) {
 // log out
 	$scope.logout = function () {
 		ref.unauth();
-		console.log('clicked logout');
 		getUID.addUID("");
 		$scope.loggedOut = true;
 	};
