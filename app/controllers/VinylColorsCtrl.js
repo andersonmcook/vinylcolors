@@ -195,14 +195,14 @@ $scope.$watch("Text", function(newValue, oldValue) {
 
 // match tricolors
 // need to make tricolors templates first
-	// $scope.match = function () {
-	// 	if ($scope.Configuration.$id === "haze") {
-	// 		$scope.SpecialConfiguration = $scope.specialconfigs[0];
-	// 		$scope.specialconfigs[0].disabled = false;
-	// 	}
-	// 	if ($scope.Configuration.$id !== "haze") {
-	// 		$scope.specialconfigs[0].disabled = true;
-	// 	}
-	// };
+	$scope.match = function () {
+		if ($scope.Configuration.$id === "tricolora") {
+			$scope.SpecialConfiguration = $scope.specialconfigs[2];
+			$scope.specialconfigs[2].disabled = false;
+		}
+		if ($scope.Configuration.$id !== "tricolora") {
+			$scope.specialconfigs[2].disabled = true;
+		}
+	};
 
 }]);
