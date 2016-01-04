@@ -25,15 +25,18 @@ app.controller("VinylColorsCtrl",
 	var c = $routeParams.c;
 	var lc = $routeParams.lc;
 	var tc = $routeParams.tc;
+	var spc = $routeParams.spc;
 
 // pulls from firebase and makes arrays of the objects we need
 	var ref = new Firebase("http://vinylcolors.firebaseio.com");
 	var colorsRef = ref.child("colors");
 	var configsRef = ref.child("configs");
 	var selectionsRef = ref.child("/users/" + uid + "/selections/");
+	var specialConfigsRef = ref.child("specialconfigs");
 	$scope.colors = $firebaseArray(colorsRef);
 	$scope.configs = $firebaseArray(configsRef);
 	$scope.selections = $firebaseArray(selectionsRef);
+	$scope.specialconfigs = $firebaseArray(specialConfigsRef);
 
 // sets routeparams colors with default fallback
 	$scope.colors.$loaded().then(function(){
@@ -46,6 +49,10 @@ app.controller("VinylColorsCtrl",
 		var scIndex = $scope.colors.map(x => x.$id).indexOf(sc);
 		$scope.SecondaryColor = scIndex > -1 ? $scope.colors[scIndex] : $scope.colors[34];
 
+// sets tertiary color based on routeparams with default fallback
+		var spcIndex = $scope.colors.map(x => x.$id).indexOf(spc);
+		$scope.TertiaryColor = spcIndex > -1 ? $scope.colors[spcIndex] : $scope.colors[28];
+
 	}).catch(function(error) {
       console.log("Error:", error);
     });
@@ -54,6 +61,15 @@ app.controller("VinylColorsCtrl",
 	$scope.configs.$loaded().then(function(){
 		var cIndex = $scope.configs.map(x => x.$id).indexOf(c);
 		$scope.Configuration = cIndex > -1 ? $scope.configs[cIndex] : $scope.configs[5];
+
+	}).catch(function(error) {
+      console.log("Error:", error);
+    });
+
+// sets special configuration based on routeparams with default fallback
+	$scope.specialconfigs.$loaded().then(function(){
+		var specialIndex = $scope.specialconfigs.map(x => x.$id).indexOf(spc);
+		$scope.SpecialConfiguration = specialIndex > -1 ? $scope.specialconfigs[specialIndex] : $scope.specialconfigs[1];
 
 	}).catch(function(error) {
       console.log("Error:", error);
@@ -109,13 +125,17 @@ $scope.$watch("Text", function(newValue, oldValue) {
 	$scope.random = function () {
 		var base = Math.floor(Math.random() * ($scope.colors.length));
 		var second = Math.floor(Math.random() * ($scope.colors.length));
+		var third = Math.floor(Math.random() * ($scope.colors.length));
 		var label = "#" + ("00000" + (Math.random() * (1<<24)|0).toString(16)).slice(-6);
 		var labeltext = "#" + ("00000" + (Math.random() * (1<<24)|0).toString(16)).slice(-6);
 		var combo = Math.floor(Math.random() * ($scope.configs.length));
+		var special = Math.floor(Math.random() * ($scope.specialconfigs.length));
 		$scope.BaseColor = $scope.colors[base];
 		$scope.SecondaryColor = $scope.colors[second];
+		$scope.TertiaryColor = $scope.colors[third];
 		$scope.LabelColor = label;
 		$scope.Configuration = $scope.configs[combo];
+		$scope.SpecialConfiguration = $scope.specialconfigs[special];
 		$scope.TextColor = labeltext;
 	};
 
