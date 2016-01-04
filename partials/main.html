@@ -71,7 +71,6 @@
 			<span>SAVED SELECTIONS</span>
 			<ul>
 				<li ng-repeat="selection in selections">
-<!-- 					<a href="{{selection.url}}">{{selection.name}}</a><span class='red-x glyphicon glyphicon-remove' ng-click="delete(selection)"></span> -->
 					<span ng-click="applySaved(selection)">{{selection.name}}</span><span class='red-x glyphicon glyphicon-remove' ng-click="delete(selection)"></span>
 				</li>
 			</ul>
