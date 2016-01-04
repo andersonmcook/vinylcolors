@@ -181,6 +181,7 @@ $scope.$watch("Text", function(newValue, oldValue) {
 		$scope.SpecialConfiguration = $scope.specialconfigs[specialIndex];
 		$scope.LabelColor = selection.lc;
 		$scope.TextColor = selection.tc;
+		$scope.match();
 	};
 
 // delete a saved selection
@@ -195,7 +196,6 @@ $scope.$watch("Text", function(newValue, oldValue) {
 	};
 
 // match tricolors
-// need to make tricolors templates first
 	$scope.match = function () {
 		if ($scope.Configuration.$id === "tricolora") {
 			$scope.SpecialConfiguration = $scope.specialconfigs[2];
