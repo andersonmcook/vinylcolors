@@ -53,10 +53,10 @@
 		<select class="form-control" id="tertiary-color" ng-model="TertiaryColor" ng-options="color as color.name group by color.transparency for color in colors">
 		</select>
 		<span>CONFIGURATION</span>
-		<select class="form-control" id="configuration" ng-model="Configuration" ng-options="config as config.name for config in configs">
+		<select class="form-control" id="configuration" ng-model="Configuration" ng-options="config as config.name for config in configs" ng-change="match()">
 		</select>
 		<span>SPECIAL</span>
-		<select class="form-control" id="special-configuration" ng-model="SpecialConfiguration" ng-options="specialconfig as specialconfig.name for specialconfig in specialconfigs">
+		<select class="form-control" id="special-configuration" ng-model="SpecialConfiguration" ng-options="specialconfig  as specialconfig.name disable when specialconfig.disabled for specialconfig in specialconfigs">
 		</select>
 		<span>LABEL COLOR</span>
 	  <input type="color" value="#ff0000" ng-model="LabelColor">
