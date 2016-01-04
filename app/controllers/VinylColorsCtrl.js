@@ -99,6 +99,9 @@ $scope.$watch("Text", function(newValue, oldValue) {
 
 // resets all colors and configuration
 	$scope.reset = function () {
+		$scope.specialconfigs[2].disabled = true;
+		$scope.specialconfigs[0].disabled = false;
+		$scope.specialconfigs[1].disabled = false;
 		$scope.BaseColor = $scope.colors[4];
 		$scope.SecondaryColor = $scope.colors[34];
 		$scope.TertiaryColor = $scope.colors[28];
