@@ -26,6 +26,7 @@ app.controller("VinylColorsCtrl",
 	var lc = $routeParams.lc;
 	var tc = $routeParams.tc;
 	var spc = $routeParams.spc;
+	var ac = $routeParams.ac;
 
 // pulls from firebase and makes arrays of the objects we need
 	var ref = new Firebase("http://vinylcolors.firebaseio.com");
@@ -68,7 +69,7 @@ app.controller("VinylColorsCtrl",
 
 // sets special configuration based on routeparams with default fallback
 	$scope.specialconfigs.$loaded().then(function(){
-		var specialIndex = $scope.specialconfigs.map(x => x.$id).indexOf(spc);
+		var specialIndex = $scope.specialconfigs.map(x => x.$id).indexOf(ac);
 		$scope.SpecialConfiguration = specialIndex > -1 ? $scope.specialconfigs[specialIndex] : $scope.specialconfigs[1];
 
 	}).catch(function(error) {
@@ -86,7 +87,9 @@ $scope.$watch("Text", function(newValue, oldValue) {
 	if ($scope.Text.toLowerCase() === "nashville software school") {
 		$scope.BaseColor = $scope.colors[18];
 		$scope.SecondaryColor = $scope.colors[34];
+		$scope.TertiaryColor = $scope.colors[34];
 		$scope.Configuration = $scope.configs[1];
+		$scope.SpecialConfiguration = $scope.specialconfigs[1];
 		$scope.LabelColor = "#515151";
 		$scope.TextColor = "#cbcbcb";
 	}
@@ -96,14 +99,16 @@ $scope.$watch("Text", function(newValue, oldValue) {
 	$scope.reset = function () {
 		$scope.BaseColor = $scope.colors[4];
 		$scope.SecondaryColor = $scope.colors[34];
+		$scope.TertiaryColor = $scope.colors[28];
 		$scope.Configuration = $scope.configs[5];
+		$scope.SpecialConfiguration = $scope.specialconfigs[1];
 		$scope.LabelColor = "#000000";
 		$scope.TextColor = "#FFFFFF";
 	};
 
 // generates URL for page
 	$scope.addToURL = function () {
-  	$scope.sampleURL = "http://localhost:8080/#/main/" + $scope.BaseColor.$id + "/" + $scope.SecondaryColor.$id + "/" + $scope.Configuration.$id + "/" + $scope.LabelColor.substr(1) + "/" + $scope.TextColor.substr(1);
+  	$scope.sampleURL = "http://localhost:8080/#/main/" + $scope.BaseColor.$id + "/" + $scope.SecondaryColor.$id + "/" + $scope.TertiaryColor.$id + "/" + $scope.Configuration.$id + "/" + $scope.SpecialConfiguration.$id + "/" + $scope.LabelColor.substr(1) + "/" + $scope.TextColor.substr(1);
   	// default message when you click share icon
 		$scope.Message = "Share URL copied to clipboard";
 	};
@@ -155,7 +160,7 @@ $scope.$watch("Text", function(newValue, oldValue) {
 // save a selection
 	$scope.save = function () {
 		var selectionsRef = ref.child("/users/" + uid + "/selections/");
-		selectionsRef.push({"name": $scope.selection, "bc": $scope.BaseColor.$id, "sc": $scope.SecondaryColor.$id, "c": $scope.Configuration.$id, "lc": $scope.LabelColor, "tc": $scope.TextColor});
+		selectionsRef.push({"name": $scope.selection, "bc": $scope.BaseColor.$id, "sc": $scope.SecondaryColor.$id, "spc": $scope.TertiaryColor.$id, "c": $scope.Configuration.$id, "ac": $scope.SpecialConfiguration.$id, "lc": $scope.LabelColor, "tc": $scope.TextColor});
 		$scope.selection = "";
 	};
 
@@ -163,10 +168,14 @@ $scope.$watch("Text", function(newValue, oldValue) {
 	$scope.applySaved = function (selection) {
 		var bcIndex = $scope.colors.map(x => x.$id).indexOf(selection.bc);
 		var scIndex = $scope.colors.map(x => x.$id).indexOf(selection.sc);
+		var spcIndex = $scope.colors.map(x => x.$id).indexOf(selection.spc);
 		var cIndex = $scope.configs.map(x => x.$id).indexOf(selection.c);
+		var specialIndex = $scope.specialconfigs.map(x => x.$id).indexOf(selection.ac);
 		$scope.BaseColor = $scope.colors[bcIndex];
 		$scope.SecondaryColor = $scope.colors[scIndex];
+		$scope.TertiaryColor = $scope.colors[spcIndex];
 		$scope.Configuration = $scope.configs[cIndex];
+		$scope.SpecialConfiguration = $scope.specialconfigs[specialIndex];
 		$scope.LabelColor = selection.lc;
 		$scope.TextColor = selection.tc;
 	};
@@ -178,7 +187,7 @@ $scope.$watch("Text", function(newValue, oldValue) {
 
 // login button to go to login page and store some info
 	$scope.loginButton = function () {
-		getUID.addParams($scope.BaseColor.$id, $scope.SecondaryColor.$id, $scope.Configuration.$id, $scope.LabelColor.substr(1), $scope.TextColor.substr(1));
+		getUID.addParams($scope.BaseColor.$id, $scope.SecondaryColor.$id, $scope.TertiaryColor.$id, $scope.Configuration.$id, $scope.SpecialConfiguration.$id, $scope.LabelColor.substr(1), $scope.TextColor.substr(1));
 		$location.path("/login/");
 	};
 

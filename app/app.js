@@ -7,7 +7,7 @@ app.config(['$routeProvider',
         templateUrl: './partials/main.html',
         controller: 'VinylColorsCtrl'
       }).
-      when('/main/:bc/:sc/:c/:lc?/:tc?', {
+      when('/main/:bc/:sc/:spc/:c/:ac/:lc/:tc', {
         templateUrl: './partials/main.html',
         controller: 'VinylColorsCtrl'
       }).

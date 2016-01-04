@@ -13,8 +13,8 @@ app.factory("getUID", function() {
       return bucket;
     },
 // add parameters for pre-saving the selection when going to the login page
-    addParams: function(bc, sc, c, lc, tc) {
-      all = bc + "/" + sc + "/" + c + "/" + lc + "/" + tc;
+    addParams: function(bc, sc, spc, c, ac, lc, tc) {
+      all = bc + "/" + sc + "/" + spc + "/" + c + "/" + ac + "/" + lc + "/" + tc;
       return all;
     },
 // apply parameters when coming back from login page
