@@ -16,6 +16,15 @@
 			<path d="{{Configuration.d}}" fill="{{SecondaryColor.hex}}"/>
 		</svg>
 
+		<svg width="800" height="800" class="{{SpecialConfiguration.class}} {{TertiaryColor.transparency}} {{TertiaryColor.black}}">
+		  <defs>
+		    <filter id="blur2">
+					<feGaussianBlur in="SourceGraphic" stdDeviation="{{SpecialConfiguration.deviation}}" />
+		    </filter>
+		  </defs>
+			<path d="{{SpecialConfiguration.d}}" fill="{{TertiaryColor.hex}}"/>
+		</svg>
+
 		<svg height="200" width="200" id="label">
 		  <circle cx="106" cy="101" r="84" fill="{{LabelColor}}" stroke="black" stroke-width=".25" />
 		</svg>
@@ -40,8 +49,14 @@
 		<span>SECONDARY COLOR</span>
 		<select class="form-control" id="secondary-color" ng-model="SecondaryColor" ng-options="color as color.name group by color.transparency for color in colors">
 		</select>
+		<span>TERTIARY COLOR</span>
+		<select class="form-control" id="tertiary-color" ng-model="TertiaryColor" ng-options="color as color.name group by color.transparency for color in colors">
+		</select>
 		<span>CONFIGURATION</span>
 		<select class="form-control" id="configuration" ng-model="Configuration" ng-options="config as config.name for config in configs">
+		</select>
+		<span>SPECIAL</span>
+		<select class="form-control" id="special-configuration" ng-model="SpecialConfiguration" ng-options="specialconfig as specialconfig.name for specialconfig in specialconfigs">
 		</select>
 		<span>LABEL COLOR</span>
 	  <input type="color" value="#ff0000" ng-model="LabelColor">

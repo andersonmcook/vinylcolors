@@ -143,6 +143,13 @@ input[type="color"] {
 	position: absolute;
 }
 
+.additionalsplatter {
+	position: absolute;
+	filter: url(#blur2);
+	left: 20px;
+	top: -220px;
+}
+
 .picture {
 	position: absolute;
 	top: 58px;
