@@ -86,7 +86,7 @@ app.controller("VinylColorsCtrl",
 
 // easter egg
 $scope.$watch("Text", function(newValue, oldValue) {
-	if ($scope.Text.toLowerCase() === "nashville software school") {
+	if ($scope.Text.toLowerCase() === "nss") {
 		$scope.BaseColor = $scope.colors[18];
 		$scope.SecondaryColor = $scope.colors[34];
 		$scope.TertiaryColor = $scope.colors[34];
@@ -200,9 +200,13 @@ $scope.$watch("Text", function(newValue, oldValue) {
 		if ($scope.Configuration.$id === "tricolora") {
 			$scope.SpecialConfiguration = $scope.specialconfigs[2];
 			$scope.specialconfigs[2].disabled = false;
+			$scope.specialconfigs[0].disabled = true;
+			$scope.specialconfigs[1].disabled = true;
 		}
 		if ($scope.Configuration.$id !== "tricolora") {
 			$scope.specialconfigs[2].disabled = true;
+			$scope.specialconfigs[0].disabled = false;
+			$scope.specialconfigs[1].disabled = false;
 		}
 	};
 
