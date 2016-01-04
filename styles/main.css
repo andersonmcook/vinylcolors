@@ -110,6 +110,16 @@ input[type="color"] {
 .noconfig {
   position: absolute; }
 
+.tricolora {
+  position: absolute;
+  left: 53.25px;
+  top: -203px; }
+
+.tricolorb {
+  position: absolute;
+  left: 53px;
+  top: -204px; }
+
 .additionalsplatter {
   position: absolute;
   filter: url(#blur2);
