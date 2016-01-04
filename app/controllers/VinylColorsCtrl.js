@@ -133,12 +133,8 @@ $scope.$watch("Text", function(newValue, oldValue) {
 	};
 
 // save a selection
-// should i save them as an object with the necessary parts rather than a url?
-// this is now saved as an object with the necessary parts
 	$scope.save = function () {
-		// $scope.savedURL = "/#/main/" + $scope.BaseColor.$id + "/" + $scope.SecondaryColor.$id + "/" + $scope.Configuration.$id + "/" + $scope.LabelColor.substr(1) + "/" + $scope.TextColor.substr(1);
 		var selectionsRef = ref.child("/users/" + uid + "/selections/");
-		// selectionsRef.push({"name": $scope.selection, "url": $scope.savedURL});
 		selectionsRef.push({"name": $scope.selection, "bc": $scope.BaseColor.$id, "sc": $scope.SecondaryColor.$id, "c": $scope.Configuration.$id, "lc": $scope.LabelColor, "tc": $scope.TextColor});
 		$scope.selection = "";
 	};
