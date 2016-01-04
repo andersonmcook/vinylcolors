@@ -193,4 +193,16 @@ $scope.$watch("Text", function(newValue, oldValue) {
 		$location.path("/login/");
 	};
 
+// match tricolors
+// need to make tricolors templates first
+	// $scope.match = function () {
+	// 	if ($scope.Configuration.$id === "haze") {
+	// 		$scope.SpecialConfiguration = $scope.specialconfigs[0];
+	// 		$scope.specialconfigs[0].disabled = false;
+	// 	}
+	// 	if ($scope.Configuration.$id !== "haze") {
+	// 		$scope.specialconfigs[0].disabled = true;
+	// 	}
+	// };
+
 }]);
