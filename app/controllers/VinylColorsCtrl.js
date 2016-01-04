@@ -134,11 +134,25 @@ $scope.$watch("Text", function(newValue, oldValue) {
 
 // save a selection
 // should i save them as an object with the necessary parts rather than a url?
+// this is now saved as an object with the necessary parts
 	$scope.save = function () {
-		$scope.savedURL = "/#/main/" + $scope.BaseColor.$id + "/" + $scope.SecondaryColor.$id + "/" + $scope.Configuration.$id + "/" + $scope.LabelColor.substr(1) + "/" + $scope.TextColor.substr(1);
+		// $scope.savedURL = "/#/main/" + $scope.BaseColor.$id + "/" + $scope.SecondaryColor.$id + "/" + $scope.Configuration.$id + "/" + $scope.LabelColor.substr(1) + "/" + $scope.TextColor.substr(1);
 		var selectionsRef = ref.child("/users/" + uid + "/selections/");
-		selectionsRef.push({"name": $scope.selection, "url": $scope.savedURL});
+		// selectionsRef.push({"name": $scope.selection, "url": $scope.savedURL});
+		selectionsRef.push({"name": $scope.selection, "bc": $scope.BaseColor.$id, "sc": $scope.SecondaryColor.$id, "c": $scope.Configuration.$id, "lc": $scope.LabelColor, "tc": $scope.TextColor});
 		$scope.selection = "";
+	};
+
+// apply the saved selection
+	$scope.applySaved = function (selection) {
+		var bcIndex = $scope.colors.map(x => x.$id).indexOf(selection.bc);
+		var scIndex = $scope.colors.map(x => x.$id).indexOf(selection.sc);
+		var cIndex = $scope.configs.map(x => x.$id).indexOf(selection.c);
+		$scope.BaseColor = $scope.colors[bcIndex];
+		$scope.SecondaryColor = $scope.colors[scIndex];
+		$scope.Configuration = $scope.configs[cIndex];
+		$scope.LabelColor = selection.lc;
+		$scope.TextColor = selection.tc;
 	};
 
 // delete a saved selection
