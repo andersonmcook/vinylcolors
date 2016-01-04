@@ -113,12 +113,14 @@ input[type="color"] {
 .tricolora {
   position: absolute;
   left: 53.25px;
-  top: -203px; }
+  top: -203px;
+  filter: url(#blur); }
 
 .tricolorb {
   position: absolute;
   left: 53px;
-  top: -204px; }
+  top: -204px;
+  filter: url(#blur2); }
 
 .additionalsplatter {
   position: absolute;

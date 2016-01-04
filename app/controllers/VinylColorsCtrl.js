@@ -136,7 +136,7 @@ $scope.$watch("Text", function(newValue, oldValue) {
 		var label = "#" + ("00000" + (Math.random() * (1<<24)|0).toString(16)).slice(-6);
 		var labeltext = "#" + ("00000" + (Math.random() * (1<<24)|0).toString(16)).slice(-6);
 		var combo = Math.floor(Math.random() * ($scope.configs.length));
-		var special = Math.floor(Math.random() * ($scope.specialconfigs.length));
+		var special = Math.floor(Math.random() * ($scope.specialconfigs.length - 1));
 		$scope.BaseColor = $scope.colors[base];
 		$scope.SecondaryColor = $scope.colors[second];
 		$scope.TertiaryColor = $scope.colors[third];
@@ -144,6 +144,7 @@ $scope.$watch("Text", function(newValue, oldValue) {
 		$scope.Configuration = $scope.configs[combo];
 		$scope.SpecialConfiguration = $scope.specialconfigs[special];
 		$scope.TextColor = labeltext;
+		$scope.match();
 	};
 
 // spins record at ~33 1/3 rpm
