@@ -178,13 +178,14 @@ ul {
 	padding-left: 0;
 }
 
-ul a {
+ul span {
 	text-decoration: none;
 	color: black;
 	font-size: 1.5em;
+	cursor: pointer;
 }
 
-ul a:hover {
+ul span:hover {
 	text-decoration: none;
 	color: gray;
 }
