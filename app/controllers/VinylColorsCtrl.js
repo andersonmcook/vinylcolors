@@ -28,8 +28,6 @@ app.controller("VinylColorsCtrl",
 	var spc = $routeParams.spc;
 	var ac = $routeParams.ac;
 
-	var spec = "";
-
 // pulls from firebase and makes arrays of the objects we need
 	var ref = new Firebase("http://vinylcolors.firebaseio.com");
 	var colorsRef = ref.child("colors");
