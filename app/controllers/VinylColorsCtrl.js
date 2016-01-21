@@ -1,7 +1,7 @@
 /*jshint esnext: true */
 
-app.controller("VinylColorsCtrl", 
-	["$scope", "$routeParams", "$firebaseArray", "getUID", "$location", 
+app.controller("VinylColorsCtrl",
+	["$scope", "$routeParams", "$firebaseArray", "getUID", "$location",
 	function($scope, $routeParams, $firebaseArray, getUID, $location) {
 
 // adds clipboard functionality to copy class
@@ -111,7 +111,7 @@ $scope.$watch("Text", function(newValue, oldValue) {
 
 // generates URL for page
 	$scope.addToURL = function () {
-  	$scope.sampleURL = "http://localhost:8080/#/main/" + $scope.BaseColor.$id + "/" + $scope.SecondaryColor.$id + "/" + $scope.TertiaryColor.$id + "/" + $scope.Configuration.$id + "/" + $scope.SpecialConfiguration.$id + "/" + $scope.LabelColor.substr(1) + "/" + $scope.TextColor.substr(1);
+  	$scope.sampleURL = "http://vinylcolors.firebaseapp.com/#/main/" + $scope.BaseColor.$id + "/" + $scope.SecondaryColor.$id + "/" + $scope.TertiaryColor.$id + "/" + $scope.Configuration.$id + "/" + $scope.SpecialConfiguration.$id + "/" + $scope.LabelColor.substr(1) + "/" + $scope.TextColor.substr(1);
   	// default message when you click share icon
 		$scope.Message = "Share URL copied to clipboard";
 	};
