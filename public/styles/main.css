@@ -1,0 +1,183 @@
+body {
+  overflow: hidden; }
+
+.btn {
+  display: block;
+  margin: .25em 0; }
+
+.col-md-7 {
+  width: 700px; }
+
+input[type="color"] {
+  display: block;
+  margin: .25em 0; }
+
+.textlabel {
+  display: block; }
+
+#controls {
+  background: white;
+  padding: 1em; }
+
+#user-controls {
+  padding: 1em; }
+
+#login-register-form {
+  text-align: center;
+  margin-top: 25%; }
+
+#shareurl {
+  word-wrap: break-word; }
+
+.btn {
+  border-radius: 0;
+  background: white;
+  border: 1px solid black; }
+
+.smallbtn {
+  border-radius: 50%;
+  background: white;
+  border: 1px solid red;
+  margin-left: .5em;
+  line-height: 1em;
+  color: red;
+  vertical-align: text-bottom; }
+
+.red-x {
+  color: red;
+  margin-left: .5em;
+  cursor: pointer; }
+
+#center-hole {
+  left: 340px;
+  top: 300px;
+  position: absolute; }
+
+#label {
+  position: absolute;
+  left: 260px;
+  top: 225px;
+  -webkit-filter: brightness(0.9); }
+
+#label-text {
+  position: absolute;
+  left: 305px;
+  top: 126px;
+  font-weight: bold; }
+
+.label {
+  text-transform: uppercase; }
+
+.black {
+  opacity: 0.9; }
+
+.halfandhalf {
+  left: 116px;
+  top: 225px;
+  position: absolute;
+  filter: url(#blur); }
+
+.haze {
+  left: -25px;
+  top: -190px;
+  position: absolute;
+  filter: url(#blur); }
+
+.colorincolor {
+  position: absolute;
+  left: -25px;
+  top: -225px;
+  filter: url(#blur); }
+
+.asidebside {
+  position: absolute;
+  left: 25px;
+  top: -225px;
+  filter: url(#blur); }
+
+.splatter {
+  position: absolute;
+  left: -20px;
+  top: -230px;
+  filter: url(#blur); }
+
+.heavysplatter {
+  position: absolute;
+  left: 2px;
+  top: -220px;
+  filter: url(#blur); }
+
+.noconfig {
+  position: absolute; }
+
+.tricolora {
+  position: absolute;
+  left: 53.25px;
+  top: -203px;
+  filter: url(#blur); }
+
+.tricolorb {
+  position: absolute;
+  left: 53px;
+  top: -204px;
+  filter: url(#blur2); }
+
+.additionalsplatter {
+  position: absolute;
+  filter: url(#blur2);
+  left: 20px;
+  top: -220px; }
+
+.picture {
+  position: absolute;
+  top: 58px;
+  left: 98px;
+  opacity: .05;
+  z-index: 1000;
+  -webkit-filter: brightness(2.5); }
+
+.Transparent {
+  -webkit-filter: brightness(1.1); }
+
+.Semi-Transparent {
+  -webkit-filter: brightness(1.05); }
+
+@keyframes spinrecord {
+  from {
+    transform: rotate(0deg); }
+  to {
+    transform: rotate(360deg); } }
+.spin {
+  transform-origin: 52.25% 53.825%;
+  animation-name: spinrecord;
+  animation-duration: 1.8s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear; }
+
+ul {
+  list-style-type: none;
+  padding-left: 0; }
+
+ul span {
+  text-decoration: none;
+  color: black;
+  font-size: 1.5em;
+  cursor: pointer; }
+
+ul span:hover {
+  text-decoration: none;
+  color: gray; }
+
+a {
+  text-decoration: none;
+  color: black; }
+
+a:hover {
+  text-decoration: none;
+  color: black; }
+
+#logout {
+  border: 1px solid red;
+  color: red; }
+
+/*# sourceMappingURL=main.css.map */

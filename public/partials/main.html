@@ -1,0 +1,94 @@
+<div class="row">
+
+	<div class="col-md-7" id="vinyl-holder">
+		<img src="record-small.jpg" height="536" width="536" class="picture">
+
+		<svg height="600" width="620" class="{{BaseColor.transparency}} {{BaseColor.black}}">
+		  <circle cx="350" cy="325" r="250" fill="{{BaseColor.hex}}" stroke="black" stroke-width=".5"/>
+		</svg>
+
+		<svg width="800" height="800" class="{{Configuration.class}} {{SecondaryColor.transparency}} {{SecondaryColor.black}}">
+		  <defs>
+		    <filter id="blur">
+					<feGaussianBlur in="SourceGraphic" stdDeviation="{{Configuration.deviation}}" />
+		    </filter>
+		  </defs>
+			<path d="{{Configuration.d}}" fill="{{SecondaryColor.hex}}"/>
+		</svg>
+
+		<svg width="800" height="800" class="{{SpecialConfiguration.class}} {{TertiaryColor.transparency}} {{TertiaryColor.black}}">
+		  <defs>
+		    <filter id="blur2">
+					<feGaussianBlur in="SourceGraphic" stdDeviation="{{SpecialConfiguration.deviation}}" />
+		    </filter>
+		  </defs>
+			<path d="{{SpecialConfiguration.d}}" fill="{{TertiaryColor.hex}}"/>
+		</svg>
+
+		<svg height="200" width="200" id="label">
+		  <circle cx="106" cy="101" r="84" fill="{{LabelColor}}" stroke="black" stroke-width=".25" />
+		</svg>
+		<svg height="300" width="300" id="label-text">
+			<defs>
+		    <path id="textPath" d="M 10 200 A 50,50 0 1 1 10 200.0001"/>
+			</defs>
+			<text fill="{{TextColor}}">
+		    <textPath xlink:href="#textPath">{{Text}}</textPath>
+			</text>
+		</svg>
+
+		<svg height="200" width="200" id="center-hole">
+		  <circle cx="26" cy="26" r="6" fill="white" stroke="black" stroke-width:".125" />
+		</svg>
+	</div>
+
+	<div class="col-md-2" id="controls">
+		<span>BASE COLOR</span>
+		<select class="form-control" id="base-color" ng-model="BaseColor" ng-options="color as color.name group by color.transparency for color in colors">
+		</select>
+		<span>SECONDARY COLOR</span>
+		<select class="form-control" id="secondary-color" ng-model="SecondaryColor" ng-options="color as color.name group by color.transparency for color in colors">
+		</select>
+		<span>TERTIARY COLOR</span>
+		<select class="form-control" id="tertiary-color" ng-model="TertiaryColor" ng-options="color as color.name group by color.transparency for color in colors">
+		</select>
+		<span>CONFIGURATION</span>
+		<select class="form-control" id="configuration" ng-model="Configuration" ng-options="config as config.name for config in configs" ng-change="match()">
+		</select>
+		<span>SPECIAL</span>
+		<select class="form-control" id="special-configuration" ng-model="SpecialConfiguration" ng-options="specialconfig  as specialconfig.name disable when specialconfig.disabled for specialconfig in specialconfigs">
+		</select>
+		<span>LABEL COLOR</span>
+	  <input type="color" value="#ff0000" ng-model="LabelColor">
+	  <span>TEXT COLOR</span>
+	  <input type="color" value="#ff0000" ng-model="TextColor">
+	  <span class="textlabel">TEXT</span>
+	  <input type="text" ng-model="Text" size="24">
+	  <hr>
+	  <button id="spinbutton" class="btn" ng-click="toggle = !toggle; spin()" ng-show="toggle"><span class="glyphicon glyphicon-play"></span></button>
+	  <button id="stopbutton" class="btn" ng-click="toggle = !toggle; spin()" ng-hide="toggle"><span class="glyphicon glyphicon-stop"></span></button>
+	  <button class="btn" ng-click="reverseColors()">REVERSE</button>
+	  <button class="btn" ng-click="random()">RANDOM</button>
+		<button class="btn" ng-click="reset()">RESET</button>
+		<hr>
+		<button class="btn copy" ng-click="addToURL()" data-clipboard-target="#shareurl"><span class="glyphicon glyphicon-copy"></span></button>
+		<p>{{Message}}</p>
+		<a id="shareurl" href="{{sampleURL}}">{{sampleURL}}</a>
+	</div>
+	<div class="col-md-3" id="user-controls">
+		<button id="login-register" class="btn" ng-show="loggedOut" ng-click="loginButton()">LOGIN / REGISTER</button>
+		<button id="logout" class="btn" ng-hide="loggedOut" ng-click="logout()">LOGOUT</button>
+		<div ng-hide="loggedOut">
+			<hr>
+			<input type="text" ng-model="selection" placeholder="NAME YOUR SELECTION" size="24">
+			<button class="btn" ng-click="save()">SAVE</button>
+			<hr>
+			<span>SAVED SELECTIONS</span>
+			<ul>
+				<li ng-repeat="selection in selections">
+					<span ng-click="applySaved(selection)">{{selection.name}}</span><span class='red-x glyphicon glyphicon-remove' ng-click="delete(selection)"></span>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
