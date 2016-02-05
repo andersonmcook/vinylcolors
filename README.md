@@ -1,4 +1,5 @@
 # vinylcolors
+<<<<<<< HEAD
 
 An app created for my Front End Capstone at Nashville Software School.
 
@@ -23,3 +24,5 @@ Reverse switches the Base and Secondary colors
 Random will randomly generate all options
 Reset will set all options to default
 The clipboard button will copy a shareable link to your clipboard
+=======
+>>>>>>> d2bcfcb1d2d21882fbbdb518a6bae9cc45e89a0a
