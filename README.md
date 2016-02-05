@@ -10,7 +10,7 @@ Firebase
 FirebaseArray
 Clipboard.js
 
-##Usage
+#Usage
 For a quick demo: click the Random button a few times.
 Select base, secondary, and tertiary colors
 Base color changes the base record color
